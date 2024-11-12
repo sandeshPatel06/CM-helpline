@@ -1,0 +1,940 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8"/>
+        <link rel="icon" type="image/png" href="UINew/img/fev.png" sizes="32x32"/>
+        <link rel="stylesheet" type="text/css" href="UINew/css/BootStrap5/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="UINew/css/animate.css"/>
+        <link rel="stylesheet" type="text/css" href="UINew/css/custom.css"/>
+        <link rel="stylesheet" type="text/css" href="UINew/css/font-awesome.min.css"/>
+        <style type="text/css">
+            #back2Top {
+                padding: 10px 0px;
+            }
+        </style>
+        <link href="./assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="UINew/js/jquery.min.js"></script>
+        <title>Scheme Dashboard
+</title>
+    </head>
+    <body>
+        <form name="aspnetForm" method="post" action="./SchemeDashboard.html" id="aspnetForm">
+            <div>
+                <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value=""/>
+                <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value=""/>
+                <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value=""/>
+                <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE5OTQxNDQzMTMPZBYCZg9kFgICAw9kFgZmDxBkZBYBZmQCAQ8QZGQWAWZkAgIPZBYCAgIPEA8WBh4ORGF0YVZhbHVlRmllbGQFCERlcGFydGlkHg1EYXRhVGV4dEZpZWxkBQpEZXBhcnRuYW1lHgtfIURhdGFCb3VuZGdkEBVBIC0t4KS14KS/4KSt4KS+4KSXIOCkmuClgeCkqOClhy0tNeCknOCkqOCknOCkvuCkpOClgOCkryDgpJXgpL7gpLDgpY3gpK8g4KS14KS/4KSt4KS+4KSXSOCkheCkqOClgeCkuOClguCkmuCkv+CkpCDgpJzgpL7gpKTgpL8g4KSV4KSy4KWN4KSv4KS+4KSjIOCkteCkv+CkreCkvuCklxzgpIbgpK/gpYHgpLcg4KS14KS/4KSt4KS+4KSXL+CkieCkmuCljeCkmiDgpLbgpL/gpJXgpY3gpLfgpL4g4KS14KS/4KSt4KS+4KSXZOCkieCkpuCljeCkr+CkvuCkqOCkv+CkleClgCDgpI/gpLXgpIIg4KSW4KS+4KSm4KWN4KSvIOCkquCljeCksOCkuOCkguCkuOCljeCkleCksOCkoyDgpLXgpL/gpK3gpL7gpJcf4KSJ4KSw4KWN4KSc4KS+IOCkteCkv+CkreCkvuCkl1ngpJXgpL/gpLjgpL7gpKgg4KSV4KSy4KWN4KSv4KS+4KSjIOCkj+CkteCkgiDgpJXgpYPgpLfgpL8g4KS14KS/4KSV4KS+4KS4IOCkteCkv+CkreCkvuCkl0vgpJXgpYHgpJ/gpYDgpLAg4KSP4KS14KSCIOCkl+CljeCksOCkvuCkruCli+CkpuCljeCkr+Cli+CklyDgpLXgpL/gpK3gpL7gpJcp4KSW4KSo4KS/4KScIOCkuOCkvuCkp+CkqCDgpLXgpL/gpK3gpL7gpJeBAeCkluCkvuCkpuCljeCkryDgpKjgpL7gpJfgpLDgpL/gpJUg4KSG4KSq4KWC4KSw4KWN4KSk4KS/IOCkj+CkteCkgiDgpIngpKrgpK3gpYvgpJXgpY3gpKTgpL4g4KS44KSC4KSw4KSV4KWN4KS34KSjIOCkteCkv+CkreCkvuCkl0PgpJbgpYfgpLIg4KSP4KS14KSCIOCkr+ClgeCkteCkviDgpJXgpLLgpY3gpK/gpL7gpKMg4KS14KS/4KSt4KS+4KSXGeCkl+Clg+CkuSDgpLXgpL/gpK3gpL7gpJc74KSa4KS/4KSV4KS/4KSk4KWN4KS44KS+IOCktuCkv+CkleCljeCkt+CkviDgpLXgpL/gpK3gpL7gpJc84KSc4KSoIOCktuCkv+CkleCkvuCkr+CkpCDgpKjgpL/gpLXgpL7gpLDgpKMg4KS14KS/4KSt4KS+4KSXKeCknOCkqCDgpLjgpILgpKrgpLDgpY3gpJUg4KS14KS/4KSt4KS+4KSXKeCknOCksiDgpLjgpILgpLjgpL7gpKfgpKgg4KS14KS/4KSt4KS+4KSXGeCknOClh+CksiDgpLXgpL/gpK3gpL7gpJdi4KSc4KWI4KS1IOCkteCkv+CkteCkv+Ckp+CkpOCkviDgpLUg4KSc4KWI4KS1IOCkquCljeCksOCli+CkpuCljeCkr+Cli+Ckl+Ckv+CkleClgCDgpLXgpL/gpK3gpL7gpJdv4KSk4KSV4KSo4KS/4KSV4KWAIOCktuCkv+CkleCljeCkt+CkvizgpJXgpYzgpLbgpLIg4KS14KS/4KSV4KS+4KS4IOCkj+CkteCkgiDgpLDgpYvgpJzgpJfgpL7gpLAg4KS14KS/4KSt4KS+4KSXKOCkheCkp+CljeCkr+CkvuCkpOCljeCkriDgpLXgpL/gpK3gpL7gpJdG4KSo4KSX4KSw4KWA4KSvIOCkteCkv+CkleCkvuCkuCDgpI/gpILgpLUg4KSG4KS14KS+4KS4IOCkteCkv+CkreCkvuCklz/gpKjgpLDgpY3gpK7gpKbgpL4g4KSY4KS+4KSf4KWAIOCkteCkv+CkleCkvuCkuCDgpLXgpL/gpK3gpL7gpJdM4KSo4KS14KWA4KSoIOCkj+CkteCkgiDgpKjgpLXgpJXgpLDgpKPgpYDgpK8g4KSJ4KSw4KWN4KSc4KS+IOCkteCkv+CkreCkvuCkl1LgpKrgpILgpJrgpL7gpK/gpKQg4KSP4KS14KSCIOCkl+CljeCksOCkvuCkruClgOCkoyDgpLXgpL/gpJXgpL7gpLgg4KS14KS/4KSt4KS+4KSXIuCkquCksOCkv+CkteCkueCkqCDgpLXgpL/gpK3gpL7gpJci4KSq4KSw4KWN4KSv4KSf4KSoIOCkteCkv+CkreCkvuCklz/gpKrgpLbgpYHgpKrgpL7gpLLgpKgg4KSP4KS14KSCIOCkoeClh+Ckr+CksOClgCDgpLXgpL/gpK3gpL7gpJdj4KSq4KS/4KSb4KWc4KS+IOCkteCksOCljeCklyDgpLUg4KSF4KSy4KWN4KSq4KS44KSC4KSW4KWN4KSv4KSVIOCkleCksuCljeCkr+CkvuCkoyDgpLXgpL/gpK3gpL7gpJcgKOCkquClgeCkqOCksOCljeCkteCkvuCkuCDgpLXgpL/gpK3gpL7gpJdv4KSt4KWL4KSq4KS+4KSyIOCkl+CliOCkuCDgpKTgpY3gpLDgpL7gpLjgpKbgpYAg4KSw4KS+4KS54KSkIOCkj+CkteCkgiDgpKrgpYHgpKjgpLDgpY3gpLXgpL7gpLgg4KS14KS/4KSt4KS+4KSXXOCkruCkm+ClgeCkhiDgpJXgpLLgpY3gpK/gpL7gpKMg4KSP4KS14KSCIOCkruCkpOCljeCkuOCljeCkryDgpLXgpL/gpJXgpL7gpLgg4KS14KS/4KSt4KS+4KSXQ+CkruCkueCkv+CksuCkviDgpI/gpLXgpIIg4KSs4KS+4KSyIOCkteCkv+CkleCkvuCkuCDgpLXgpL/gpK3gpL7gpJdV4KSv4KWL4KSc4KSo4KS+IOCkhuCksOCljeCkpeCkv+CklSDgpI/gpLXgpIIg4KS44KS+4KSC4KSW4KWN4KSv4KSV4KWAIOCkteCkv+CkreCkvuCklyLgpLDgpL7gpJzgpLjgpY3gpLUg4KS14KS/4KSt4KS+4KSXL+CksuCli+CklSDgpKjgpL/gpLDgpY3gpK7gpL7gpKMg4KS14KS/4KSt4KS+4KSXPOCksuCli+CklSDgpLjgpYfgpLXgpL4g4KSq4KWN4KSw4KSs4KSC4KSn4KSoIOCkteCkv+CkreCkvuCkl2XgpLLgpYvgpJUg4KS44KWN4KS14KS+4KS44KWN4KSl4KWN4KSvIOCkj+CkteCkgiDgpKrgpLDgpL/gpLXgpL7gpLAg4KSV4KSy4KWN4KSv4KS+4KSjIOCkteCkv+CkreCkvuCkl07gpLLgpYvgpJUg4KS44KWN4KS14KS+4KS44KWN4KSl4KSvIOCkr+CkvuCkguCkpOCljeCksOCkv+CkleClgCDgpLXgpL/gpK3gpL7gpJcW4KS14KSoIOCkteCkv+CkreCkvuCkl2jgpIngpKbgpY3gpK/gpYvgpJcg4KSo4KWA4KSk4KS/IOCkj+CkteCkgiDgpKjgpL/gpLXgpYfgpLYg4KSq4KWN4KSw4KWL4KSk4KWN4KS44KS+4KS54KSoIOCkteCkv+CkreCkvuCklzLgpLXgpL7gpKPgpL/gpJzgpY3gpK/gpL/gpJUg4KSV4KSwIOCkteCkv+CkreCkvuCklx/gpLXgpL/gpKTgpY3gpKQg4KS14KS/4KSt4KS+4KSXSeCkteCkv+Ckp+CkvyDgpI/gpLXgpIIg4KS14KS/4KSn4KS+4KSv4KWAIOCkleCkvuCksOCljeCkryDgpLXgpL/gpK3gpL7gpJci4KS14KS/4KSu4KS+4KSo4KSoIOCkteCkv+CkreCkvuCkl40B4KS14KS/4KSu4KWB4KSV4KWN4KSkIOCkmOClgeCkruCkleCljeCkleClnCDgpI/gpLXgpIIg4KSF4KSw4KWN4KSm4KWN4KSn4KSY4KWB4KSu4KSV4KWN4KSV4KWcIOCknOCkvuCkpOCkvyDgpJXgpLLgpY3gpK/gpL7gpKMg4KS14KS/4KSt4KS+4KSXHOCktuCljeCksOCkriDgpLXgpL/gpK3gpL7gpJcy4KS44KSC4KS44KSm4KWA4KSvIOCkleCkvuCksOCljeCkryDgpLXgpL/gpK3gpL7gpJco4KS44KSC4KS44KWN4KSV4KWD4KSk4KS/IOCkteCkv+CkreCkvuCklyjgpLjgpLngpJXgpL7gpLDgpL/gpKTgpL4g4KS14KS/4KSt4KS+4KSXeuCkuOCkvuCkruCkvuCknOCkv+CklSDgpKjgpY3gpK/gpL7gpK8g4KSP4KS14KSCIOCkpuCkv+CkteCljeCkr+CkvuCkguCkl+CknOCkqCDgpLjgpLbgpJXgpY3gpKTgpL/gpJXgpLDgpKMg4KS14KS/4KSt4KS+4KSXO+CkuOCkvuCkruCkvuCkqOCljeCkryDgpKrgpY3gpLDgpLbgpL7gpLjgpKgg4KS14KS/4KSt4KS+4KSXTuCkuOClguCkmuCkqOCkviDgpI/gpLXgpIIg4KSq4KWN4KSw4KWL4KSm4KWN4KSv4KWL4KSX4KS/4KSV4KWAIOCkteCkv+CkreCkvuCklzLgpLjgpY3gpJXgpYLgpLIg4KS24KS/4KSV4KWN4KS34KS+IOCkteCkv+CkreCkvuCkl4EB4KSu4KSn4KWN4KSv4KSq4KWN4KSw4KSm4KWH4KS2IOCkpOClgOCksOCljeCkpS3gpLjgpY3gpKXgpL7gpKgg4KSP4KS14KSCIOCkruClh+CksuCkviDgpKrgpY3gpLDgpL7gpKfgpL/gpJXgpLDgpKMg4KSt4KWL4KSq4KS+4KSyOuCkruClgeCkluCljeCkr+CkruCkguCkpOCljeCksOClgCDgpJXgpL7gpLDgpY3gpK/gpL7gpLLgpK864KSV4KWH4KSC4KSm4KWN4KSw4KWA4KSvIOCktuCkvuCkuOCkqOCkvuCkp+Ckv+CkqOCkuOCljeCkpVbgpLjgpYLgpJXgpY3gpLfgpY3gpK4g4KSy4KSY4KWBIOCklOCksCDgpK7gpKfgpY3gpK/gpK4g4KSJ4KSm4KWN4KSv4KSuIOCkteCkv+CkreCkvuCkl1TgpLXgpL/gpJzgpY3gpJ7gpL7gpKgg4KSP4KS14KSCIOCkquCljeCksOCljOCkpuCljeCkr+Cli+Ckl+Ckv+CkleClgCDgpLXgpL/gpK3gpL7gpJd54KSu4KSn4KWN4KSv4KSq4KWN4KSw4KSm4KWH4KS2IOCkqOCkv+CknOClgCDgpLXgpL/gpLbgpY3gpLXgpLXgpL/gpKbgpY3gpK/gpL7gpLLgpK8g4KS14KS/4KSo4KS/4KSv4KS+4KSu4KSVIOCkhuCkr+Cli+CklyjgpKrgpLDgpY3gpK/gpL7gpLXgpLDgpKMg4KS14KS/4KSt4KS+4KSXVeCkleCkvuCksOCljeCkruCkv+CkguCklS0g4KS44KS+4KSu4KS+4KSo4KWN4KSvIOCkquCljeCksOCktuCkvuCkuOCkqCDgpLXgpL/gpK3gpL7gpJe0AeCkruCkvuCkluCkqOCksuCkvuCksiDgpJrgpKTgpYHgpLDgpY3gpLXgpYfgpKbgpYAg4KSw4KS+4KS34KWN4KSf4KWN4KSw4KWA4KSvIOCkquCkpOCljeCksOCkleCkvuCksOCkv+CkpOCkviDgpI/gpLXgpIIg4KS44KSC4KSa4KS+4KSwIOCkteCkv+CktuCljeCkteCkteCkv+CkpuCljeCkr+CkvuCksuCkryAoTUNVKTLgpIbgpKrgpKbgpL4g4KSq4KWN4KSw4KSs4KSC4KSn4KSoIOCkteCkv+CkreCkvuCkl1HgpLLgpYvgpJUg4KSq4KSw4KS/4KS44KSu4KWN4KSq4KSk4KWN4KSk4KS/IOCkquCljeCksOCkrOCkguCkp+CkqCDgpLXgpL/gpK3gpL7gpJcVQQIwMAEwATEBMgE0ATUBNgE3ATgBOQIxMAIxMQIxMgIxMwIxNAIxNQIxNgIxNwIxOAIxOQIyMAIyMQIyMgIyMwIyNAIyNQIyNgIyNwIyOAIyOQIzMAIzMQIzMgIzMwIzNAIzNQIzNgIzNwIzOAIzOQI0MAI0MQI0MwI0NAI0NQI0NgI0NwI0OAI0OQI1MQI1MgI1MwI1NQI1NgI2NwI2OAI2OQI3MAI3MQI3MgI3MwI3NAI3NQI3NgI3NxQrA0FnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkZPrrfk4mwN0i4yM/A6Jh2whu51T8c3jLSdynA+70dRHD"/>
+            </div>
+            <script type="text/javascript">
+                //<![CDATA[
+                var theForm = document.forms['aspnetForm'];
+                if (!theForm) {
+                    theForm = document.aspnetForm;
+                }
+                function __doPostBack(eventTarget, eventArgument) {
+                    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                        theForm.__EVENTTARGET.value = eventTarget;
+                        theForm.__EVENTARGUMENT.value = eventArgument;
+                        theForm.submit();
+                    }
+                }
+                //]]>
+            </script>
+            <div>
+                <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="79BE3524"/>
+            </div>
+            <header class="shadow">
+                <div class="top-main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-4 col-xl-6">
+                                <div class="topbar">
+                                    <div class="left-tobar right-tobar">
+                                        <ul class="mb-0 p-0">
+                                            <li class="w-auto ps-0 border-0">
+                                                <a class="text-white">
+                                                    <span>मध्य प्रदेश सरकार</span>
+                                                </a>
+                                            </li>
+                                            <li class="dropdown px-2 form-select w-auto rounded-0 px-2 d-md-none border-0 ">
+                                                <a href="javascript:void(0)" class="nav-link pe-3 mobile-app text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="phone">
+                                                        <path fill="#fff" d="M340.4,0h-170c-30.3,0-55,24.7-55,55V457c0,30.3,24.7,55,55,55h170c30.3,0,55-24.7,55-55V55  C395.4,24.7,370.8,0,340.4,0z M234.7,22.6h42.2c4.9,0,8.8,4.5,8.8,10s-3.9,10-8.8,10h-42.2c-4.9,0-8.8-4.5-8.8-10  S229.8,22.6,234.7,22.6z M194.8,21.1c6.3,0,11.5,5.1,11.5,11.5S201.1,44,194.8,44c-6.3,0-11.5-5.1-11.5-11.5S188.4,21.1,194.8,21.1z   M255.8,477.1c-10.2,0-18.4-8.2-18.4-18.4c0-10.2,8.2-18.4,18.4-18.4s18.4,8.2,18.4,18.4C274.2,468.9,266,477.1,255.8,477.1z   M363.4,429.5H147.5V66.6h215.9V429.5z"/>
+                                                    </svg>
+                                                    <span>मोबाइल एप</span>
+                                                </a>
+                                                <ul class="dropdown-menu p-0 mb-0">
+                                                    <li class="d-block p-0  ms-0  border-0  border-bottom">
+                                                        <a class="dropdown-item px-3" href="https://play.google.com/store/apps/details?id=com.magnum.helpline" target="_blank">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="phone">
+                                                                <path fill="#231f20" d="M340.4,0h-170c-30.3,0-55,24.7-55,55V457c0,30.3,24.7,55,55,55h170c30.3,0,55-24.7,55-55V55  C395.4,24.7,370.8,0,340.4,0z M234.7,22.6h42.2c4.9,0,8.8,4.5,8.8,10s-3.9,10-8.8,10h-42.2c-4.9,0-8.8-4.5-8.8-10  S229.8,22.6,234.7,22.6z M194.8,21.1c6.3,0,11.5,5.1,11.5,11.5S201.1,44,194.8,44c-6.3,0-11.5-5.1-11.5-11.5S188.4,21.1,194.8,21.1z   M255.8,477.1c-10.2,0-18.4-8.2-18.4-18.4c0-10.2,8.2-18.4,18.4-18.4s18.4,8.2,18.4,18.4C274.2,468.9,266,477.1,255.8,477.1z   M363.4,429.5H147.5V66.6h215.9V429.5z"/>
+                                                            </svg>
+                                                            <span>सिटिज़न एप</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="d-block p-0 ms-0  border-0 border-bottom">
+                                                        <a class="dropdown-item px-3" hrefActive="active-link" href="https://play.google.com/store/apps/details?id=com.magnum.officerapp" target="_blank">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="phone">
+                                                                <path fill="#231f20" d="M340.4,0h-170c-30.3,0-55,24.7-55,55V457c0,30.3,24.7,55,55,55h170c30.3,0,55-24.7,55-55V55  C395.4,24.7,370.8,0,340.4,0z M234.7,22.6h42.2c4.9,0,8.8,4.5,8.8,10s-3.9,10-8.8,10h-42.2c-4.9,0-8.8-4.5-8.8-10  S229.8,22.6,234.7,22.6z M194.8,21.1c6.3,0,11.5,5.1,11.5,11.5S201.1,44,194.8,44c-6.3,0-11.5-5.1-11.5-11.5S188.4,21.1,194.8,21.1z   M255.8,477.1c-10.2,0-18.4-8.2-18.4-18.4c0-10.2,8.2-18.4,18.4-18.4s18.4,8.2,18.4,18.4C274.2,468.9,266,477.1,255.8,477.1z   M363.4,429.5H147.5V66.6h215.9V429.5z"/>
+                                                            </svg>
+                                                            <span>ऑफिसर एप (एंड्रॉइड)</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="bg-color3 px-1 border-end d-md-none float-end">
+                                                <select name="ctl00$ddlLanguageMobile" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddlLanguageMobile\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddlLanguageMobile" class="form-select w-auto ps-1 pe-3  text-white border-0 py-0">
+                                                    <option selected="selected" value="hi-IN" class="bg-color4">हिंदी</option>
+                                                    <option value="en-US" class="bg-color4">English</option>
+                                                </select>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 col-lg-8 col-xl-6">
+                                <div class="topbar">
+                                    <div class="right-tobar text-end">
+                                        <ul class="mb-0 p-0 d-none d-md-block">
+                                            <li class="d-none d-lg-inline">
+                                                <a href="ScreenReaderDownload.aspx">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="student-reading">
+                                                        <path d="M16 12a5 5 0 1 1 5-5 5 5 0 0 1-5 5Zm0 10.68a10 10 0 0 1 6.73-5.4h.05a7 7 0 0 0-13.56 0 10 10 0 0 1 6.78 5.4ZM26.57 22a17.67 17.67 0 0 0-2.45.17c-4.27.58-7.54 2.63-8 5.16A3.42 3.42 0 0 0 16 28a3.42 3.42 0 0 0-.07-.71c-.51-2.53-3.78-4.58-8-5.16a17.67 17.67 0 0 0-2.5-.13H2v8h28v-8Zm-9.49.77a9 9 0 0 0-.78 2c1.51-1.78 4.26-3.1 7.68-3.56a18.79 18.79 0 0 1 2.59-.21H28v-3h-2.94a9.08 9.08 0 0 0-2.1.25 9.19 9.19 0 0 0-5.88 4.52ZM8 21.18c3.42.46 6.17 1.78 7.69 3.56a9.18 9.18 0 0 0-4.94-5.89 8.77 8.77 0 0 0-1.75-.6A9.08 9.08 0 0 0 6.94 18H4v3h1.43a18.54 18.54 0 0 1 2.57.18Z" data-name="1-student"/>
+                                                    </svg>
+                                                    स्क्रीन रीडर
+                                    
+                                                </a>
+                                            </li>
+                                            <li class="d-none d-lg-inline">
+                                                <a href="Policies.aspx">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="police">
+                                                        <path d="M54.17 15.94a1.467 1.467 0 0 0-.45-1.06l-7.3-7.09a1.492 1.492 0 0 0-2.46.58c-.01.04-1.33 3.9-5.12 3.65a6.542 6.542 0 0 1-5.46-3.73 1.478 1.478 0 0 0-1.37-.92H32a1.509 1.509 0 0 0-1.38.91 6.526 6.526 0 0 1-5.46 3.74c-3.71.25-5.06-3.5-5.12-3.65a1.492 1.492 0 0 0-2.46-.58l-7.3 7.09a1.467 1.467 0 0 0-.45 1.06 1.442 1.442 0 0 0 .44 1.07c3.17 3.18 2.77 7.61.82 15.19-1.94 7.55.04 17.9 20.46 24.37a1.483 1.483 0 0 0 .9 0c20.42-6.47 22.4-16.82 20.46-24.37-1.95-7.58-2.35-12.01.82-15.19a1.442 1.442 0 0 0 .44-1.07ZM41.5 31.18l-3.66 3.56.86 5.04a1.5 1.5 0 0 1-2.18 1.58L32 38.98l-4.52 2.38a1.46 1.46 0 0 1-.7.18 1.51 1.51 0 0 1-1.48-1.76l.86-5.04-3.66-3.56a1.5 1.5 0 0 1 .84-2.56l5.05-.74 2.26-4.58a1.524 1.524 0 0 1 1.35-.84 1.498 1.498 0 0 1 1.34.84l2.27 4.58 5.06.74a1.5 1.5 0 0 1 .83 2.56Zm-7.1-.44 2.83.41-2.05 2a1.452 1.452 0 0 0-.43 1.32l.48 2.82-2.53-1.33a1.526 1.526 0 0 0-1.4 0l-2.53 1.33.48-2.82a1.452 1.452 0 0 0-.43-1.32l-2.05-2 2.83-.41a1.488 1.488 0 0 0 1.13-.82L32 27.35l1.27 2.57a1.488 1.488 0 0 0 1.13.82Z"/>
+                                                    </svg>
+                                                    नीतियाँँ
+                                    
+                                                </a>
+                                            </li>
+                                            <li class=" px-xl-3 px-2 blink_btn">
+                                                <a class="" href="MIS/index.html">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 48 48" viewBox="0 0 48 48" id="login-and-password">
+                                                        <path d="M38.6 47.3c0 .4-.3.7-.7.7H10.1c-.4 0-.7-.3-.7-.7s.3-.7.7-.7h5.4V47h17v-.4h5.4C38.3 46.5 38.6 46.9 38.6 47.3zM44.8 6.4h-8.5C36.7 7.2 37 8 37.2 8.9h5.6c.4 0 .7.3.7.7v27.6c0 .4-.3.7-.7.7H5.1c-.4 0-.7-.3-.7-.7V9.6c0-.4.3-.7.7-.7h5.6c.2-.8.5-1.7.9-2.5H3.2C2.5 6.4 1.9 7 1.9 7.7v31.6c0 .7.6 1.2 1.2 1.2h41.7c.7 0 1.2-.6 1.2-1.2V7.7C46.1 7 45.5 6.4 44.8 6.4zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24.8 4L24.8 4c.3 0 .5.1.6.3 0 0 .5.8 1.4.9-.4-1.2-1.5-2-2.8-2-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4zM36 10.3c-.2-1.4-.7-2.8-1.4-4C32.4 2.4 28.4 0 24 0s-8.4 2.4-10.6 6.2c-.7 1.3-1.2 2.6-1.4 4-.1.6-.1 1.3-.1 1.9 0 6.7 5.4 12.1 12.1 12.1s12.1-5.4 12.1-12.1C36.1 11.5 36.1 10.9 36 10.3zM19.5 5.9c.2-2.3 2.1-4.1 4.5-4.1 1.2 0 2.2.4 3 1.2.8.7 1.3 1.7 1.4 2.9 0 .1 0 .3 0 .4 0 1.8-1.1 3.7-2.6 4.6-.6.4-1.2.5-1.9.5-.6 0-1.3-.2-1.9-.5-1.5-.9-2.6-2.8-2.6-4.6C19.5 6.2 19.5 6 19.5 5.9zM28.5 21h-9c-1.4 0-2.6-1.2-2.6-2.6 0-3.8 3-6.5 7.1-6.5 1.9 0 3.7.6 5 1.7 1.4 1.2 2.1 2.9 2.1 4.8C31.1 19.8 29.9 21 28.5 21zM24 13.3c-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1 0-1.5-.6-2.8-1.6-3.7S25.5 13.3 24 13.3zM22.8 9.6c.8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8c-1 0-1.8-.5-2.2-1-.8.4-2 .7-3.7.8C21.1 7.8 21.9 9 22.8 9.6zM24.8 4L24.8 4c.3 0 .5.1.6.3 0 0 .5.8 1.4.9-.4-1.2-1.5-2-2.8-2-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM37.5 10.4c.1.6.1 1.2.1 1.7 0 7.5-6.1 13.6-13.6 13.6s-13.6-6.1-13.6-13.6c0-.6 0-1.1.1-1.7H5.9v26.2h36.2V10.4H37.5zM16.1 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.2.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7s.7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L16.1 31.2zM22.7 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.3.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7.4 0 .7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L22.7 31.2zM29.4 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7v-.7L26 32.5c-.1.1-.2.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7.4 0 .7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L29.4 31.2zM36 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.3.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3L32 30.6c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7s.7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L36 31.2z"/>
+                                                        <rect width="17" height="4.9" x="15.5" y="42"/>
+                                                    </svg>
+                                                    अधिकारी लॉगिन
+                                    
+                                                </a>
+                                            </li>
+                                            <li class="bg-color3 d-none d-md-inline-block">
+                                                <select name="ctl00$ddlLanguageDesktop" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddlLanguageDesktop\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddlLanguageDesktop" class="form-select w-auto ps-1 pe-3 text-white border-0 py-0">
+                                                    <option selected="selected" value="hi-IN" class="bg-color4">हिंदी</option>
+                                                    <option value="en-US" class="bg-color4">English</option>
+                                                </select>
+                                            </li>
+                                            <li class=" dropdown border-0 px-2 form-select w-auto rounded-0">
+                                                <a href="javascript:void(0)" class="nav-link pe-3 mobile-app text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="phone">
+                                                        <path fill="#fff" d="M340.4,0h-170c-30.3,0-55,24.7-55,55V457c0,30.3,24.7,55,55,55h170c30.3,0,55-24.7,55-55V55  C395.4,24.7,370.8,0,340.4,0z M234.7,22.6h42.2c4.9,0,8.8,4.5,8.8,10s-3.9,10-8.8,10h-42.2c-4.9,0-8.8-4.5-8.8-10  S229.8,22.6,234.7,22.6z M194.8,21.1c6.3,0,11.5,5.1,11.5,11.5S201.1,44,194.8,44c-6.3,0-11.5-5.1-11.5-11.5S188.4,21.1,194.8,21.1z   M255.8,477.1c-10.2,0-18.4-8.2-18.4-18.4c0-10.2,8.2-18.4,18.4-18.4s18.4,8.2,18.4,18.4C274.2,468.9,266,477.1,255.8,477.1z   M363.4,429.5H147.5V66.6h215.9V429.5z"/>
+                                                    </svg>
+                                                    <span>मोबाइल एप</span>
+                                                </a>
+                                                <ul class="dropdown-menu p-0 mb-0 ">
+                                                    <li class="d-block p-0  ms-0  border-0  border-bottom">
+                                                        <a class="dropdown-item px-3" href="https://play.google.com/store/apps/details?id=com.magnum.helpline" target="_blank">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="phone">
+                                                                <path fill="#231f20" d="M340.4,0h-170c-30.3,0-55,24.7-55,55V457c0,30.3,24.7,55,55,55h170c30.3,0,55-24.7,55-55V55  C395.4,24.7,370.8,0,340.4,0z M234.7,22.6h42.2c4.9,0,8.8,4.5,8.8,10s-3.9,10-8.8,10h-42.2c-4.9,0-8.8-4.5-8.8-10  S229.8,22.6,234.7,22.6z M194.8,21.1c6.3,0,11.5,5.1,11.5,11.5S201.1,44,194.8,44c-6.3,0-11.5-5.1-11.5-11.5S188.4,21.1,194.8,21.1z   M255.8,477.1c-10.2,0-18.4-8.2-18.4-18.4c0-10.2,8.2-18.4,18.4-18.4s18.4,8.2,18.4,18.4C274.2,468.9,266,477.1,255.8,477.1z   M363.4,429.5H147.5V66.6h215.9V429.5z"/>
+                                                            </svg>
+                                                            <span>सिटिज़न एप</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="d-block p-0 ms-0  border-0">
+                                                        <a class="dropdown-item px-3" hrefActive="active-link" href="https://play.google.com/store/apps/details?id=com.magnum.officerapp" target="_blank">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="phone">
+                                                                <path fill="#231f20" d="M340.4,0h-170c-30.3,0-55,24.7-55,55V457c0,30.3,24.7,55,55,55h170c30.3,0,55-24.7,55-55V55  C395.4,24.7,370.8,0,340.4,0z M234.7,22.6h42.2c4.9,0,8.8,4.5,8.8,10s-3.9,10-8.8,10h-42.2c-4.9,0-8.8-4.5-8.8-10  S229.8,22.6,234.7,22.6z M194.8,21.1c6.3,0,11.5,5.1,11.5,11.5S201.1,44,194.8,44c-6.3,0-11.5-5.1-11.5-11.5S188.4,21.1,194.8,21.1z   M255.8,477.1c-10.2,0-18.4-8.2-18.4-18.4c0-10.2,8.2-18.4,18.4-18.4s18.4,8.2,18.4,18.4C274.2,468.9,266,477.1,255.8,477.1z   M363.4,429.5H147.5V66.6h215.9V429.5z"/>
+                                                            </svg>
+                                                            <span>ऑफिसर एप (एंड्रॉइड)</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="navbar navbar-expand-lg py-0 ">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="UINew/img/logo-white.png " class="img-fluid logo" alt="logo"/>
+                        </a>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav  mt-lg-1 mt-3">
+                                <li class="nav-item">
+                                    <a class="nav-link " hrefActive="active" href="index.html">
+                                        <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="home">
+                                            <path d="M20 40V28h8v12h10V24h6L24 6 4 24h6v16z"/>
+                                            <path fill="none" d="M0 0h48v48H0z"/>
+                                        </svg>
+                                        <span>होम</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" hrefActive="active" href="About.aspx">
+                                        <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 6.35 6.35" id="about">
+                                            <path d="M 3.175 0 A 3.175 3.175 0 0 0 0 3.175 A 3.175 3.175 0 0 0 3.175 6.35 A 3.175 3.175 0 0 0 6.35 3.175 A 3.175 3.175 0 0 0 3.175 0 z M 3.175 1.3229167 A 0.26458332 0.26458332 0 0 1 3.4395833 1.5875 A 0.26458332 0.26458332 0 0 1 3.175 1.8520833 A 0.26458332 0.26458332 0 0 1 2.9104167 1.5875 A 0.26458332 0.26458332 0 0 1 3.175 1.3229167 z M 3.1760335 2.3807332 A 0.2645835 0.2645835 0 0 1 3.4395833 2.6463501 L 3.4395833 4.7619832 A 0.2645835 0.2645835 0 0 1 3.1760335 5.0276001 A 0.2645835 0.2645835 0 0 1 2.9104167 4.7619832 L 2.9104167 2.6463501 A 0.2645835 0.2645835 0 0 1 3.1760335 2.3807332 z " paint-order="markers fill stroke"/>
+                                        </svg>
+                                        <span>हमारे बारे में</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" hrefActive="active" href="grievance-status.aspx">
+                                        <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 64 64" viewBox="0 0 64 64" id="administrator">
+                                            <rect width="64" height="5.15" y="56.68"/>
+                                            <path d="M9.77 52.61V42.2c-3.22 1.62-5.3 4.9-5.3 8.59v3.83h5.84C9.97 54.02 9.77 53.35 9.77 52.61zM59.53 50.79c0-3.69-2.07-6.97-5.3-8.59v10.42c0 .73-.21 1.4-.55 2h5.84V50.79zM13.83 54.62h36.34c1.1 0 2-.9 2-2V33.19c0-.84-.67-1.51-1.5-1.51h-22.7c-.01 0-.01 0-.02 0H13.33c-.83 0-1.5.67-1.5 1.51v19.43C11.83 53.72 12.73 54.62 13.83 54.62zM25.29 39.92h13.42c.57 0 1.03.46 1.03 1.03 0 .58-.46 1.03-1.03 1.03H25.29c-.57 0-1.03-.45-1.03-1.03C24.26 40.38 24.72 39.92 25.29 39.92zM25.29 44.3h13.42c.57 0 1.03.46 1.03 1.03 0 .58-.46 1.03-1.03 1.03H25.29c-.57 0-1.03-.45-1.03-1.03C24.26 44.77 24.72 44.3 25.29 44.3zM27.19 11.1l-4.57 4.09v.5c0 6.5 2.16 11.8 5.66 13.94h7.46c3.26-2 5.36-6.77 5.61-12.71C35.31 17.56 29.23 12.87 27.19 11.1z"/>
+                                            <path d="M20.55,15.68c0-0.36,0-0.74,0.04-1.08c0.02-0.26,0.14-0.5,0.33-0.66l5.57-4.99c0.4-0.36,1.01-0.35,1.4,0.02   c0.08,0.07,7.72,7.31,14.26,5.71c0.31-0.07,0.64,0,0.89,0.19c0.25,0.2,0.39,0.5,0.39,0.82c0,5.86-1.67,10.9-4.49,13.94h8.02V17.13   c0-4.02-1.55-7.77-4.37-10.57c-2.84-2.83-6.6-4.39-10.59-4.39c-8.26,0-14.98,6.71-14.98,14.96v12.49h8.03   C22.23,26.58,20.55,21.54,20.55,15.68z"/>
+                                        </svg>
+                                        <span>शिकायत की स्थिति</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" hrefActive="active" href="RTI.aspx">
+                                        <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="checkmark">
+                                            <g>
+                                                <rect width="22" height="8" x="18" y="3" rx="2"/>
+                                                <path d="M48,20A12.99963,12.99963,0,0,0,35,33c.69864,17.252,25.3249,17.22689,26-.00011A13.01394,13.01394,0,0,0,48,20Zm5.91,11.91-6,6a1.98221,1.98221,0,0,1-2.81994,0l-3-3A1.99419,1.99419,0,0,1,44.91,32.09l1.59,1.58,4.59-4.58A1.99416,1.99416,0,0,1,53.91,31.91Z"/>
+                                                <path d="M5,61H53a2.00591,2.00591,0,0,0,2-2V45.1059c-9.04968,5.4631-21.14562-1.49474-20.99987-12.1061C33.8013,22.43068,45.99081,15.41229,55,20.88953V9a2.00587,2.00587,0,0,0-2-2H41V9a3.00328,3.00328,0,0,1-3,3H20a3.00328,3.00328,0,0,1-3-3V7H5A2.00587,2.00587,0,0,0,3,9V59A2.00591,2.00591,0,0,0,5,61ZM9,23a2.00587,2.00587,0,0,1,2-2H27a2.00587,2.00587,0,0,1,2,2v1a2.00591,2.00591,0,0,1-2,2H11a2.00591,2.00591,0,0,1-2-2ZM9,33a2.00587,2.00587,0,0,1,2-2H27a2.00587,2.00587,0,0,1,2,2v1a2.00591,2.00591,0,0,1-2,2H11a2.00591,2.00591,0,0,1-2-2ZM9,43a2.00587,2.00587,0,0,1,2-2H27a2.00587,2.00587,0,0,1,2,2v1a2.00591,2.00591,0,0,1-2,2H11a2.00591,2.00591,0,0,1-2-2Z"/>
+                                            </g>
+                                        </svg>
+                                        <span>आर.टी.आई</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" hrefActive="active" href="MissedCallCampaign.aspx">
+                                        <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="missed-phone">
+                                            <path fill="none" d="M0 0h24v24H0V0z"/>
+                                            <path d="M23.09 16.2c-6.33-5.59-15.86-5.59-22.18 0-.84.74-.84 2.05-.05 2.84l1.2 1.2c.71.71 1.84.77 2.62.15l1.97-1.57c.47-.37.75-.94.75-1.55V14.7c2.98-.97 6.21-.98 9.2 0v2.58c0 .6.28 1.17.75 1.55l1.96 1.56c.79.62 1.91.56 2.62-.15l1.2-1.2c.8-.79.79-2.1-.04-2.84zM6 9c.55 0 1-.45 1-1V6.43l4.24 4.24c.39.39 1.02.39 1.41 0l5.66-5.66c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0l-4.95 4.95L8.4 5H10c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1z"/>
+                                        </svg>
+                                        <span>मिस्ड-कॉल अभियान</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" hrefActive="active" href="ContactUs.aspx">
+                                        <svg class="d-md-none" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32" id="contact">
+                                            <path d="M26,2H6C4.895,2,4,2.895,4,4v2H3C2.448,6,2,6.448,2,7s0.448,1,1,1c1.795,0-1.145,0,3,0c0.552,0,1,0.448,1,1  s-0.448,1-1,1H4v12H3c-0.552,0-1,0.448-1,1s0.448,1,1,1c1.795,0-1.145,0,3,0c0.552,0,1,0.448,1,1s-0.448,1-1,1H4v2  c0,1.105,0.895,2,2,2h20c1.105,0,2-0.895,2-2V4C28,2.895,27.105,2,26,2z M16,7c2.209,0,4,1.791,4,4c0,2.209-1.791,4-4,4  s-4-1.791-4-4C12,8.791,13.791,7,16,7z M22,24H10v-2c0-3.314,2.686-6,6-6s6,2.686,6,6V24z"/>
+                                        </svg>
+                                        <span>संपर्क करें</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item d-md-none">
+                                    <a class="nav-link" hrefActive="active" href="ScreenReaderDownload.aspx">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="student-reading">
+                                            <path d="M16 12a5 5 0 1 1 5-5 5 5 0 0 1-5 5Zm0 10.68a10 10 0 0 1 6.73-5.4h.05a7 7 0 0 0-13.56 0 10 10 0 0 1 6.78 5.4ZM26.57 22a17.67 17.67 0 0 0-2.45.17c-4.27.58-7.54 2.63-8 5.16A3.42 3.42 0 0 0 16 28a3.42 3.42 0 0 0-.07-.71c-.51-2.53-3.78-4.58-8-5.16a17.67 17.67 0 0 0-2.5-.13H2v8h28v-8Zm-9.49.77a9 9 0 0 0-.78 2c1.51-1.78 4.26-3.1 7.68-3.56a18.79 18.79 0 0 1 2.59-.21H28v-3h-2.94a9.08 9.08 0 0 0-2.1.25 9.19 9.19 0 0 0-5.88 4.52ZM8 21.18c3.42.46 6.17 1.78 7.69 3.56a9.18 9.18 0 0 0-4.94-5.89 8.77 8.77 0 0 0-1.75-.6A9.08 9.08 0 0 0 6.94 18H4v3h1.43a18.54 18.54 0 0 1 2.57.18Z" data-name="1-student"/>
+                                        </svg>
+                                        <span>स्क्रीन रीडर</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item d-md-none">
+                                    <a class="nav-link" hrefActive="active" href="Policies.aspx">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="police">
+                                            <path d="M54.17 15.94a1.467 1.467 0 0 0-.45-1.06l-7.3-7.09a1.492 1.492 0 0 0-2.46.58c-.01.04-1.33 3.9-5.12 3.65a6.542 6.542 0 0 1-5.46-3.73 1.478 1.478 0 0 0-1.37-.92H32a1.509 1.509 0 0 0-1.38.91 6.526 6.526 0 0 1-5.46 3.74c-3.71.25-5.06-3.5-5.12-3.65a1.492 1.492 0 0 0-2.46-.58l-7.3 7.09a1.467 1.467 0 0 0-.45 1.06 1.442 1.442 0 0 0 .44 1.07c3.17 3.18 2.77 7.61.82 15.19-1.94 7.55.04 17.9 20.46 24.37a1.483 1.483 0 0 0 .9 0c20.42-6.47 22.4-16.82 20.46-24.37-1.95-7.58-2.35-12.01.82-15.19a1.442 1.442 0 0 0 .44-1.07ZM41.5 31.18l-3.66 3.56.86 5.04a1.5 1.5 0 0 1-2.18 1.58L32 38.98l-4.52 2.38a1.46 1.46 0 0 1-.7.18 1.51 1.51 0 0 1-1.48-1.76l.86-5.04-3.66-3.56a1.5 1.5 0 0 1 .84-2.56l5.05-.74 2.26-4.58a1.524 1.524 0 0 1 1.35-.84 1.498 1.498 0 0 1 1.34.84l2.27 4.58 5.06.74a1.5 1.5 0 0 1 .83 2.56Zm-7.1-.44 2.83.41-2.05 2a1.452 1.452 0 0 0-.43 1.32l.48 2.82-2.53-1.33a1.526 1.526 0 0 0-1.4 0l-2.53 1.33.48-2.82a1.452 1.452 0 0 0-.43-1.32l-2.05-2 2.83-.41a1.488 1.488 0 0 0 1.13-.82L32 27.35l1.27 2.57a1.488 1.488 0 0 0 1.13.82Z"/>
+                                        </svg>
+                                        <span>नीतियाँँ</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item d-md-none">
+                                    <a class="nav-link" hrefActive="active" href="MIS/index.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 48 48" viewBox="0 0 48 48" id="login-and-password">
+                                            <path d="M38.6 47.3c0 .4-.3.7-.7.7H10.1c-.4 0-.7-.3-.7-.7s.3-.7.7-.7h5.4V47h17v-.4h5.4C38.3 46.5 38.6 46.9 38.6 47.3zM44.8 6.4h-8.5C36.7 7.2 37 8 37.2 8.9h5.6c.4 0 .7.3.7.7v27.6c0 .4-.3.7-.7.7H5.1c-.4 0-.7-.3-.7-.7V9.6c0-.4.3-.7.7-.7h5.6c.2-.8.5-1.7.9-2.5H3.2C2.5 6.4 1.9 7 1.9 7.7v31.6c0 .7.6 1.2 1.2 1.2h41.7c.7 0 1.2-.6 1.2-1.2V7.7C46.1 7 45.5 6.4 44.8 6.4zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24.8 4L24.8 4c.3 0 .5.1.6.3 0 0 .5.8 1.4.9-.4-1.2-1.5-2-2.8-2-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4zM36 10.3c-.2-1.4-.7-2.8-1.4-4C32.4 2.4 28.4 0 24 0s-8.4 2.4-10.6 6.2c-.7 1.3-1.2 2.6-1.4 4-.1.6-.1 1.3-.1 1.9 0 6.7 5.4 12.1 12.1 12.1s12.1-5.4 12.1-12.1C36.1 11.5 36.1 10.9 36 10.3zM19.5 5.9c.2-2.3 2.1-4.1 4.5-4.1 1.2 0 2.2.4 3 1.2.8.7 1.3 1.7 1.4 2.9 0 .1 0 .3 0 .4 0 1.8-1.1 3.7-2.6 4.6-.6.4-1.2.5-1.9.5-.6 0-1.3-.2-1.9-.5-1.5-.9-2.6-2.8-2.6-4.6C19.5 6.2 19.5 6 19.5 5.9zM28.5 21h-9c-1.4 0-2.6-1.2-2.6-2.6 0-3.8 3-6.5 7.1-6.5 1.9 0 3.7.6 5 1.7 1.4 1.2 2.1 2.9 2.1 4.8C31.1 19.8 29.9 21 28.5 21zM24 13.3c-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1 0-1.5-.6-2.8-1.6-3.7S25.5 13.3 24 13.3zM22.8 9.6c.8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8c-1 0-1.8-.5-2.2-1-.8.4-2 .7-3.7.8C21.1 7.8 21.9 9 22.8 9.6zM24.8 4L24.8 4c.3 0 .5.1.6.3 0 0 .5.8 1.4.9-.4-1.2-1.5-2-2.8-2-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM37.5 10.4c.1.6.1 1.2.1 1.7 0 7.5-6.1 13.6-13.6 13.6s-13.6-6.1-13.6-13.6c0-.6 0-1.1.1-1.7H5.9v26.2h36.2V10.4H37.5zM16.1 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.2.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7s.7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L16.1 31.2zM22.7 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.3.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7.4 0 .7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L22.7 31.2zM29.4 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7v-.7L26 32.5c-.1.1-.2.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7.4 0 .7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L29.4 31.2zM36 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.3.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3L32 30.6c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7s.7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L36 31.2z"/>
+                                            <rect width="17" height="4.9" x="15.5" y="42"/>
+                                        </svg>
+                                        <span>अधिकारी लॉगिन</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- mobile header -->
+                        <button class="navbar-toggler bg-white px-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="offcanvas offcanvas-start d-lg-none" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                            <div class="offcanvas-header ps-0 border-bottom">
+                                <a class="pt-1" href="index.html">
+                                    <img src="UINew/img/logo.png " class="img-fluid logo " alt="logo"/>
+                                </a>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body pt-0">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item border-bottom">
+                                        <a class="nav-link " hrefActive="active" href="index.html">
+                                            <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="home">
+                                                <path d="M20 40V28h8v12h10V24h6L24 6 4 24h6v16z"/>
+                                                <path fill="none" d="M0 0h48v48H0z"/>
+                                            </svg>
+                                            <span>होम</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="About.aspx">
+                                            <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 6.35 6.35" id="about">
+                                                <path d="M 3.175 0 A 3.175 3.175 0 0 0 0 3.175 A 3.175 3.175 0 0 0 3.175 6.35 A 3.175 3.175 0 0 0 6.35 3.175 A 3.175 3.175 0 0 0 3.175 0 z M 3.175 1.3229167 A 0.26458332 0.26458332 0 0 1 3.4395833 1.5875 A 0.26458332 0.26458332 0 0 1 3.175 1.8520833 A 0.26458332 0.26458332 0 0 1 2.9104167 1.5875 A 0.26458332 0.26458332 0 0 1 3.175 1.3229167 z M 3.1760335 2.3807332 A 0.2645835 0.2645835 0 0 1 3.4395833 2.6463501 L 3.4395833 4.7619832 A 0.2645835 0.2645835 0 0 1 3.1760335 5.0276001 A 0.2645835 0.2645835 0 0 1 2.9104167 4.7619832 L 2.9104167 2.6463501 A 0.2645835 0.2645835 0 0 1 3.1760335 2.3807332 z " paint-order="markers fill stroke"/>
+                                            </svg>
+                                            <span>हमारे बारे में</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="grievance-status.aspx">
+                                            <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 64 64" viewBox="0 0 64 64" id="administrator">
+                                                <rect width="64" height="5.15" y="56.68"/>
+                                                <path d="M9.77 52.61V42.2c-3.22 1.62-5.3 4.9-5.3 8.59v3.83h5.84C9.97 54.02 9.77 53.35 9.77 52.61zM59.53 50.79c0-3.69-2.07-6.97-5.3-8.59v10.42c0 .73-.21 1.4-.55 2h5.84V50.79zM13.83 54.62h36.34c1.1 0 2-.9 2-2V33.19c0-.84-.67-1.51-1.5-1.51h-22.7c-.01 0-.01 0-.02 0H13.33c-.83 0-1.5.67-1.5 1.51v19.43C11.83 53.72 12.73 54.62 13.83 54.62zM25.29 39.92h13.42c.57 0 1.03.46 1.03 1.03 0 .58-.46 1.03-1.03 1.03H25.29c-.57 0-1.03-.45-1.03-1.03C24.26 40.38 24.72 39.92 25.29 39.92zM25.29 44.3h13.42c.57 0 1.03.46 1.03 1.03 0 .58-.46 1.03-1.03 1.03H25.29c-.57 0-1.03-.45-1.03-1.03C24.26 44.77 24.72 44.3 25.29 44.3zM27.19 11.1l-4.57 4.09v.5c0 6.5 2.16 11.8 5.66 13.94h7.46c3.26-2 5.36-6.77 5.61-12.71C35.31 17.56 29.23 12.87 27.19 11.1z"/>
+                                                <path d="M20.55,15.68c0-0.36,0-0.74,0.04-1.08c0.02-0.26,0.14-0.5,0.33-0.66l5.57-4.99c0.4-0.36,1.01-0.35,1.4,0.02   c0.08,0.07,7.72,7.31,14.26,5.71c0.31-0.07,0.64,0,0.89,0.19c0.25,0.2,0.39,0.5,0.39,0.82c0,5.86-1.67,10.9-4.49,13.94h8.02V17.13   c0-4.02-1.55-7.77-4.37-10.57c-2.84-2.83-6.6-4.39-10.59-4.39c-8.26,0-14.98,6.71-14.98,14.96v12.49h8.03   C22.23,26.58,20.55,21.54,20.55,15.68z"/>
+                                            </svg>
+                                            <span>शिकायत की स्थिति</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="RTI.aspx">
+                                            <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="checkmark">
+                                                <g>
+                                                    <rect width="22" height="8" x="18" y="3" rx="2"/>
+                                                    <path d="M48,20A12.99963,12.99963,0,0,0,35,33c.69864,17.252,25.3249,17.22689,26-.00011A13.01394,13.01394,0,0,0,48,20Zm5.91,11.91-6,6a1.98221,1.98221,0,0,1-2.81994,0l-3-3A1.99419,1.99419,0,0,1,44.91,32.09l1.59,1.58,4.59-4.58A1.99416,1.99416,0,0,1,53.91,31.91Z"/>
+                                                    <path d="M5,61H53a2.00591,2.00591,0,0,0,2-2V45.1059c-9.04968,5.4631-21.14562-1.49474-20.99987-12.1061C33.8013,22.43068,45.99081,15.41229,55,20.88953V9a2.00587,2.00587,0,0,0-2-2H41V9a3.00328,3.00328,0,0,1-3,3H20a3.00328,3.00328,0,0,1-3-3V7H5A2.00587,2.00587,0,0,0,3,9V59A2.00591,2.00591,0,0,0,5,61ZM9,23a2.00587,2.00587,0,0,1,2-2H27a2.00587,2.00587,0,0,1,2,2v1a2.00591,2.00591,0,0,1-2,2H11a2.00591,2.00591,0,0,1-2-2ZM9,33a2.00587,2.00587,0,0,1,2-2H27a2.00587,2.00587,0,0,1,2,2v1a2.00591,2.00591,0,0,1-2,2H11a2.00591,2.00591,0,0,1-2-2ZM9,43a2.00587,2.00587,0,0,1,2-2H27a2.00587,2.00587,0,0,1,2,2v1a2.00591,2.00591,0,0,1-2,2H11a2.00591,2.00591,0,0,1-2-2Z"/>
+                                                </g>
+                                            </svg>
+                                            <span>आर.टी.आई</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="MissedCallCampaign.aspx">
+                                            <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="missed-phone">
+                                                <path fill="none" d="M0 0h24v24H0V0z"/>
+                                                <path d="M23.09 16.2c-6.33-5.59-15.86-5.59-22.18 0-.84.74-.84 2.05-.05 2.84l1.2 1.2c.71.71 1.84.77 2.62.15l1.97-1.57c.47-.37.75-.94.75-1.55V14.7c2.98-.97 6.21-.98 9.2 0v2.58c0 .6.28 1.17.75 1.55l1.96 1.56c.79.62 1.91.56 2.62-.15l1.2-1.2c.8-.79.79-2.1-.04-2.84zM6 9c.55 0 1-.45 1-1V6.43l4.24 4.24c.39.39 1.02.39 1.41 0l5.66-5.66c.39-.39.39-1.02 0-1.41-.39-.39-1.02-.39-1.41 0l-4.95 4.95L8.4 5H10c.55 0 1-.45 1-1s-.45-1-1-1H6c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1z"/>
+                                            </svg>
+                                            <span>मिस्ड-कॉल अभियान</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="ContactUs.aspx">
+                                            <svg class="d-lg-none" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 32 32" viewBox="0 0 32 32" id="contact">
+                                                <path d="M26,2H6C4.895,2,4,2.895,4,4v2H3C2.448,6,2,6.448,2,7s0.448,1,1,1c1.795,0-1.145,0,3,0c0.552,0,1,0.448,1,1  s-0.448,1-1,1H4v12H3c-0.552,0-1,0.448-1,1s0.448,1,1,1c1.795,0-1.145,0,3,0c0.552,0,1,0.448,1,1s-0.448,1-1,1H4v2  c0,1.105,0.895,2,2,2h20c1.105,0,2-0.895,2-2V4C28,2.895,27.105,2,26,2z M16,7c2.209,0,4,1.791,4,4c0,2.209-1.791,4-4,4  s-4-1.791-4-4C12,8.791,13.791,7,16,7z M22,24H10v-2c0-3.314,2.686-6,6-6s6,2.686,6,6V24z"/>
+                                            </svg>
+                                            <span>संपर्क करें</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item d-lg-none border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="ScreenReaderDownload.aspx">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="student-reading">
+                                                <path d="M16 12a5 5 0 1 1 5-5 5 5 0 0 1-5 5Zm0 10.68a10 10 0 0 1 6.73-5.4h.05a7 7 0 0 0-13.56 0 10 10 0 0 1 6.78 5.4ZM26.57 22a17.67 17.67 0 0 0-2.45.17c-4.27.58-7.54 2.63-8 5.16A3.42 3.42 0 0 0 16 28a3.42 3.42 0 0 0-.07-.71c-.51-2.53-3.78-4.58-8-5.16a17.67 17.67 0 0 0-2.5-.13H2v8h28v-8Zm-9.49.77a9 9 0 0 0-.78 2c1.51-1.78 4.26-3.1 7.68-3.56a18.79 18.79 0 0 1 2.59-.21H28v-3h-2.94a9.08 9.08 0 0 0-2.1.25 9.19 9.19 0 0 0-5.88 4.52ZM8 21.18c3.42.46 6.17 1.78 7.69 3.56a9.18 9.18 0 0 0-4.94-5.89 8.77 8.77 0 0 0-1.75-.6A9.08 9.08 0 0 0 6.94 18H4v3h1.43a18.54 18.54 0 0 1 2.57.18Z" data-name="1-student"/>
+                                            </svg>
+                                            <span>स्क्रीन रीडर</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item d-lg-none border-bottom">
+                                        <a class="nav-link" hrefActive="active" href="Policies.aspx">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="police">
+                                                <path d="M54.17 15.94a1.467 1.467 0 0 0-.45-1.06l-7.3-7.09a1.492 1.492 0 0 0-2.46.58c-.01.04-1.33 3.9-5.12 3.65a6.542 6.542 0 0 1-5.46-3.73 1.478 1.478 0 0 0-1.37-.92H32a1.509 1.509 0 0 0-1.38.91 6.526 6.526 0 0 1-5.46 3.74c-3.71.25-5.06-3.5-5.12-3.65a1.492 1.492 0 0 0-2.46-.58l-7.3 7.09a1.467 1.467 0 0 0-.45 1.06 1.442 1.442 0 0 0 .44 1.07c3.17 3.18 2.77 7.61.82 15.19-1.94 7.55.04 17.9 20.46 24.37a1.483 1.483 0 0 0 .9 0c20.42-6.47 22.4-16.82 20.46-24.37-1.95-7.58-2.35-12.01.82-15.19a1.442 1.442 0 0 0 .44-1.07ZM41.5 31.18l-3.66 3.56.86 5.04a1.5 1.5 0 0 1-2.18 1.58L32 38.98l-4.52 2.38a1.46 1.46 0 0 1-.7.18 1.51 1.51 0 0 1-1.48-1.76l.86-5.04-3.66-3.56a1.5 1.5 0 0 1 .84-2.56l5.05-.74 2.26-4.58a1.524 1.524 0 0 1 1.35-.84 1.498 1.498 0 0 1 1.34.84l2.27 4.58 5.06.74a1.5 1.5 0 0 1 .83 2.56Zm-7.1-.44 2.83.41-2.05 2a1.452 1.452 0 0 0-.43 1.32l.48 2.82-2.53-1.33a1.526 1.526 0 0 0-1.4 0l-2.53 1.33.48-2.82a1.452 1.452 0 0 0-.43-1.32l-2.05-2 2.83-.41a1.488 1.488 0 0 0 1.13-.82L32 27.35l1.27 2.57a1.488 1.488 0 0 0 1.13.82Z"/>
+                                            </svg>
+                                            <span>नीतियाँँ</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item d-md-none">
+                                        <a class="nav-link" hrefActive="active" href="MIS/index.html">
+                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 48 48" viewBox="0 0 48 48" id="login-and-password">
+                                                <path d="M38.6 47.3c0 .4-.3.7-.7.7H10.1c-.4 0-.7-.3-.7-.7s.3-.7.7-.7h5.4V47h17v-.4h5.4C38.3 46.5 38.6 46.9 38.6 47.3zM44.8 6.4h-8.5C36.7 7.2 37 8 37.2 8.9h5.6c.4 0 .7.3.7.7v27.6c0 .4-.3.7-.7.7H5.1c-.4 0-.7-.3-.7-.7V9.6c0-.4.3-.7.7-.7h5.6c.2-.8.5-1.7.9-2.5H3.2C2.5 6.4 1.9 7 1.9 7.7v31.6c0 .7.6 1.2 1.2 1.2h41.7c.7 0 1.2-.6 1.2-1.2V7.7C46.1 7 45.5 6.4 44.8 6.4zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24.8 4L24.8 4c.3 0 .5.1.6.3 0 0 .5.8 1.4.9-.4-1.2-1.5-2-2.8-2-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4zM36 10.3c-.2-1.4-.7-2.8-1.4-4C32.4 2.4 28.4 0 24 0s-8.4 2.4-10.6 6.2c-.7 1.3-1.2 2.6-1.4 4-.1.6-.1 1.3-.1 1.9 0 6.7 5.4 12.1 12.1 12.1s12.1-5.4 12.1-12.1C36.1 11.5 36.1 10.9 36 10.3zM19.5 5.9c.2-2.3 2.1-4.1 4.5-4.1 1.2 0 2.2.4 3 1.2.8.7 1.3 1.7 1.4 2.9 0 .1 0 .3 0 .4 0 1.8-1.1 3.7-2.6 4.6-.6.4-1.2.5-1.9.5-.6 0-1.3-.2-1.9-.5-1.5-.9-2.6-2.8-2.6-4.6C19.5 6.2 19.5 6 19.5 5.9zM28.5 21h-9c-1.4 0-2.6-1.2-2.6-2.6 0-3.8 3-6.5 7.1-6.5 1.9 0 3.7.6 5 1.7 1.4 1.2 2.1 2.9 2.1 4.8C31.1 19.8 29.9 21 28.5 21zM24 13.3c-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1 0-1.5-.6-2.8-1.6-3.7S25.5 13.3 24 13.3zM22.8 9.6c.8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8c-1 0-1.8-.5-2.2-1-.8.4-2 .7-3.7.8C21.1 7.8 21.9 9 22.8 9.6zM24.8 4L24.8 4c.3 0 .5.1.6.3 0 0 .5.8 1.4.9-.4-1.2-1.5-2-2.8-2-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM28 14.7c-1-.9-2.5-1.4-4-1.4-3.3 0-5.6 2.1-5.6 5 0 .7.5 1.2 1.1 1.2h9c.6 0 1.1-.5 1.1-1.1C29.6 16.9 29.1 15.6 28 14.7zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24.7 5.8c-.8.4-2 .7-3.7.8.1 1.2.8 2.4 1.8 3 .8.4 1.5.4 2.3 0C26 9 26.8 7.9 26.9 6.8 25.9 6.7 25.2 6.2 24.7 5.8zM24 3.3c-1.2 0-2.3.7-2.8 1.8 2.4-.2 2.9-.7 3-.8C24.4 4.1 24.6 4 24.8 4l0 0c.3 0 .5.1.6.3 0 0 .5.8 1.4.9C26.4 4.1 25.3 3.3 24 3.3zM37.5 10.4c.1.6.1 1.2.1 1.7 0 7.5-6.1 13.6-13.6 13.6s-13.6-6.1-13.6-13.6c0-.6 0-1.1.1-1.7H5.9v26.2h36.2V10.4H37.5zM16.1 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.2.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7s.7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L16.1 31.2zM22.7 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.3.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7.4 0 .7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L22.7 31.2zM29.4 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7-.4 0-.7-.3-.7-.7v-.7L26 32.5c-.1.1-.2.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3-.6-.3c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7.4 0 .7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L29.4 31.2zM36 31.2c.4.2.5.7.3 1-.1.2-.4.4-.6.4-.1 0-.3 0-.4-.1l-.6-.3v.7c0 .4-.3.7-.7.7s-.7-.3-.7-.7v-.7l-.6.3c-.1.1-.3.1-.4.1-.3 0-.5-.1-.6-.4-.2-.4-.1-.8.3-1l.6-.3L32 30.6c-.4-.2-.5-.7-.3-1 .2-.4.7-.5 1-.3l.6.3v-.7c0-.4.3-.7.7-.7s.7.3.7.7v.7l.6-.3c.4-.2.8-.1 1 .3s.1.8-.3 1l-.6.3L36 31.2z"/>
+                                                <rect width="17" height="4.9" x="15.5" y="42"/>
+                                            </svg>
+                                            <span>अधिकारी लॉगिन</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- mobile header -->
+                    </div>
+                </nav>
+            </header>
+            <!-- end of header -->
+            <script type="text/javascript">
+                function ShowPopup() {
+                    $("#MyPopup").modal("show");
+                }
+
+                function CallPopupForDetails(id) {
+                    if ((id != null) && (id != "") && (id != "undefine")) {
+                        // alert(id);
+                        document.getElementById("DetailsPanel").style.display = "block";
+                        document.getElementById("DetailsPanel").style.visibility = "visible";
+                        document.getElementById("DetailsPanel").style.width = "100%";
+                        document.getElementById("txtSchemeDetails").innerHTML = document.getElementById(id.replace("Link", "Schemedetails")).innerText;
+                        document.getElementById("txtSchemeProcedure").innerHTML = document.getElementById(id.replace("Link", "schemeprocedure")).innerText;
+                        document.getElementById("txtSchemeCondition").innerHTML = document.getElementById(id.replace("Link", "schemecondition")).innerText;
+                        document.getElementById("schemeName").innerHTML = document.getElementById(id.replace("Link", "Schemename")).innerText;
+                        $("#btnpopcls").trigger("focus");
+                    }
+                }
+
+                $(function() {
+                    function cleartxtvalue() {
+                        document.getElementById('ctl00_ContentPlaceHolder1_txtsearch').value = '';
+                        document.getElementById('ctl00_ContentPlaceHolder1_ddlvibhag').value = '';
+                        document.getElementById('ctl00_ContentPlaceHolder1_hdnsrchtype').value = '';
+                        document.getElementById('ctl00_ContentPlaceHolder1_hdnsrchID').value = '';
+                    }
+                });
+
+                function chktxtvalue() {
+                    if ($("#ctl00_ContentPlaceHolder1_txtsearch").val() == "") {
+                        alert("नाम लिखे");
+                        return false;
+                    }
+                }
+
+                function chkddlval() {
+                    $("#ctl00_ContentPlaceHolder1_txtsearch").val('')
+                    if (document.getElementById('ctl00_ContentPlaceHolder1_ddlvibhag').value == "00") {
+                        alert("विभाग चुने");
+                        return false;
+                    }
+                }
+            </script>
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnsrchID" id="ctl00_ContentPlaceHolder1_hdnsrchID"/>
+            <input type="hidden" name="ctl00$ContentPlaceHolder1$hdnsrchtype" id="ctl00_ContentPlaceHolder1_hdnsrchtype"/>
+            <main class="schemedd_page mx-md-5">
+                <section class="scheme_sec">
+                    <div class="container-fluid ">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="title-box text-center mt-3 pb-0  wow fadeInDow">
+                                    <h1 class="heading2 text-color2 mb-xxl-3 mb-2">मध्य प्रदेश शासन की प्रमुख योजनाएं</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-3">
+                                <div class="scheme_menu text-center mb-lg-3 mt-2">
+                                    <a href="KnowYourEntitleGrid.aspx?status=BySchemeID&pointvalue=606" class="mb-3 shadow mb-lg-4 w-100 rounded-pill fw-bold pt-2 pb-1 btn btn-outline-success">किसान कल्याण योजना</a>
+                                    <a href="KnowYourEntitleGrid.aspx?status=BySchemeID&pointvalue=359" class="mb-3 shadow mb-lg-4 w-100 rounded-pill fw-bold pt-2 pb-1 btn btn-outline-warning">राष्ट्रीय परिवार सहायता योजना</a>
+                                    <a href="KnowYourEntitleGrid.aspx?status=BySchemeID&pointvalue=605" class="mb-3 shadow mb-lg-4 w-100 rounded-pill fw-bold pt-2 pb-1 btn btn-outline-danger">जल जीवन मिशन</a>
+                                    <a href="KnowYourEntitleGrid.aspx?status=BySchemeID&pointvalue=672" class="mb-3 shadow mb-lg-4 w-100 rounded-pill fw-bold pt-2 pb-1 btn btn-outline-info">कौशल विकास</a>
+                                    <a href="KnowYourEntitleGrid.aspx?status=BySchemeID&pointvalue=632" class="mb-3 shadow mb-lg-4 w-100 rounded-pill fw-bold pt-2 pb-1 btn btn-outline-primary">विद्यार्थी कल्‍याण योजना</a>
+                                    <a href="KnowYourEntitleGrid.aspx?status=BySchemeID&pointvalue=372" class="mb-3 shadow mb-lg-4 w-100 rounded-pill fw-bold pt-2 pb-1 btn btn-outline-dark">मुख्यमंत्री कन्या अभिभावक पेंशन योजना</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-8 col-lg-9">
+                                <div class="row ">
+                                    <div class="col-sm-12 col-md-10  mx-auto">
+                                        <div class="scheme_search_box border-bottom pb-3 mt-2">
+                                            <div class="d-lg-flex align-content-lg-center justify-content-lg-between">
+                                                <label>विभाग :</label>
+                                                <select name="ctl00$ContentPlaceHolder1$ddlvibhag" id="ctl00_ContentPlaceHolder1_ddlvibhag" class="w-auto rounded-pill  form-select">
+                                                    <option value="00">--विभाग चुने--</option>
+                                                    <option value="0">जनजातीय कार्य विभाग</option>
+                                                    <option value="1">अनुसूचित जाति कल्याण विभाग</option>
+                                                    <option value="2">आयुष विभाग</option>
+                                                    <option value="4">उच्च शिक्षा विभाग</option>
+                                                    <option value="5">उद्यानिकी एवं खाद्य प्रसंस्करण विभाग</option>
+                                                    <option value="6">उर्जा विभाग</option>
+                                                    <option value="7">किसान कल्याण एवं कृषि विकास विभाग</option>
+                                                    <option value="8">कुटीर एवं ग्रामोद्योग विभाग</option>
+                                                    <option value="9">खनिज साधन विभाग</option>
+                                                    <option value="10">खाद्य नागरिक आपूर्ति एवं उपभोक्ता संरक्षण विभाग</option>
+                                                    <option value="11">खेल एवं युवा कल्याण विभाग</option>
+                                                    <option value="12">गृह विभाग</option>
+                                                    <option value="13">चिकित्सा शिक्षा विभाग</option>
+                                                    <option value="14">जन शिकायत निवारण विभाग</option>
+                                                    <option value="15">जन संपर्क विभाग</option>
+                                                    <option value="16">जल संसाधन विभाग</option>
+                                                    <option value="17">जेल विभाग</option>
+                                                    <option value="18">जैव विविधता व जैव प्रोद्योगिकी विभाग</option>
+                                                    <option value="19">तकनिकी शिक्षा,कौशल विकास एवं रोजगार विभाग</option>
+                                                    <option value="20">अध्यात्म विभाग</option>
+                                                    <option value="21">नगरीय विकास एंव आवास विभाग</option>
+                                                    <option value="22">नर्मदा घाटी विकास विभाग</option>
+                                                    <option value="23">नवीन एवं नवकरणीय उर्जा विभाग</option>
+                                                    <option value="24">पंचायत एवं ग्रामीण विकास विभाग</option>
+                                                    <option value="25">परिवहन विभाग</option>
+                                                    <option value="26">पर्यटन विभाग</option>
+                                                    <option value="27">पशुपालन एवं डेयरी विभाग</option>
+                                                    <option value="28">पिछड़ा वर्ग व अल्पसंख्यक कल्याण विभाग </option>
+                                                    <option value="29">पुनर्वास विभाग</option>
+                                                    <option value="30">भोपाल गैस त्रासदी राहत एवं पुनर्वास विभाग</option>
+                                                    <option value="31">मछुआ कल्याण एवं मत्स्य विकास विभाग</option>
+                                                    <option value="32">महिला एवं बाल विकास विभाग</option>
+                                                    <option value="33">योजना आर्थिक एवं सांख्यकी विभाग</option>
+                                                    <option value="34">राजस्व विभाग</option>
+                                                    <option value="35">लोक निर्माण विभाग</option>
+                                                    <option value="36">लोक सेवा प्रबंधन विभाग</option>
+                                                    <option value="37">लोक स्वास्थ्य एवं परिवार कल्याण विभाग</option>
+                                                    <option value="38">लोक स्वास्थय यांत्रिकी विभाग</option>
+                                                    <option value="39">वन विभाग</option>
+                                                    <option value="40">उद्योग नीति एवं निवेश प्रोत्साहन विभाग</option>
+                                                    <option value="41">वाणिज्यिक कर विभाग</option>
+                                                    <option value="43">वित्त विभाग</option>
+                                                    <option value="44">विधि एवं विधायी कार्य विभाग</option>
+                                                    <option value="45">विमानन विभाग</option>
+                                                    <option value="46">विमुक्त घुमक्कड़ एवं अर्द्धघुमक्कड़ जाति कल्याण विभाग</option>
+                                                    <option value="47">श्रम विभाग</option>
+                                                    <option value="48">संसदीय कार्य विभाग</option>
+                                                    <option value="49">संस्कृति विभाग</option>
+                                                    <option value="51">सहकारिता विभाग</option>
+                                                    <option value="52">सामाजिक न्याय एवं दिव्यांगजन सशक्तिकरण विभाग</option>
+                                                    <option value="53">सामान्य प्रशासन विभाग</option>
+                                                    <option value="55">सूचना एवं प्रोद्योगिकी विभाग</option>
+                                                    <option value="56">स्कूल शिक्षा विभाग</option>
+                                                    <option value="67">मध्यप्रदेश तीर्थ-स्थान एवं मेला प्राधिकरण भोपाल</option>
+                                                    <option value="68">मुख्यमंत्री कार्यालय</option>
+                                                    <option value="69">केंद्रीय शासनाधिनस्थ</option>
+                                                    <option value="70">सूक्ष्म लघु और मध्यम उद्यम विभाग</option>
+                                                    <option value="71">विज्ञान एवं प्रौद्योगिकी विभाग</option>
+                                                    <option value="72">मध्यप्रदेश निजी विश्वविद्यालय विनियामक आयोग</option>
+                                                    <option value="73">पर्यावरण विभाग</option>
+                                                    <option value="74">कार्मिंक- सामान्य प्रशासन विभाग</option>
+                                                    <option value="75">माखनलाल चतुर्वेदी राष्ट्रीय पत्रकारिता एवं संचार विश्वविद्यालय (MCU)</option>
+                                                    <option value="76">आपदा प्रबंधन विभाग</option>
+                                                    <option value="77">लोक परिसम्पत्ति प्रबंधन विभाग</option>
+                                                </select>
+                                                <input type="submit" name="ctl00$ContentPlaceHolder1$searchvibhag" value="सर्च करें" onclick="return chkddlval();" id="ctl00_ContentPlaceHolder1_searchvibhag" class="btn btn-primary text-white bg-color1 rounded-pill fs-6 btn_view px-lg-4 ms-2"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-lg-10 mx-auto">
+                                        <div class="scheme_search_box bg-white my-3 rounded-2 d-lg-flex align-content-lg-center justify-content-lg-between">
+                                            <input name="ctl00$ContentPlaceHolder1$txtsearch" type="text" id="ctl00_ContentPlaceHolder1_txtsearch" class="form-control rounded-pill shadow" placeholder="योजनाओं की जानकारी खोजें"/>
+                                            <input type="submit" name="ctl00$ContentPlaceHolder1$serchdep" value="सर्च करें" onclick="return chktxtvalue();" id="ctl00_ContentPlaceHolder1_serchdep" class="btn btn-primary text-white shadow bg-color1 rounded-pill fs-6 btn_view px-lg-4 ms-2 pt-2 pb-1"/>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-sm-12 col-md-8 col-lg-7 col-xl-6 mx-auto">
+                                <a href="KnowYourEntitleByDepartment.aspx?status=BySchemeID&pointvalue=359" 
+                                class="btn btn-primary text-white w-100 bg-color1 rounded-pill heading8 btn_view mt-3 pt-2 pb-1">
+                                    योजना के लिये अपनी पात्रता जाने
+                                </a>
+                            </div> -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="title-box text-center pb-0 wow fadeInDown my-0">
+                                            <h5 class="heading7 fw-bold text-color2 mb-xxl-3 mb-2">वर्ग वार योजनाएं </h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12  scheme_box">
+                                        <div class="row align-content-lg-center justify-content-lg-center">
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeFor&pointvalue=1" class="wow slideInRight shadow plan-box p-2 text-center rounded-2 pcolor1 text-decoration-none d-block mb-3">
+                                                    <div class="plan-conten pt-1">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 512 512" id="farmer" fill="#fff">
+                                                                <path fill="#f1b0a2" d="m72.63 348.952 31.366 55.515v7.966h64.084v44.917l-23.602 38.31a27 27 0 0 1-47.405-2.638L34.3 360Z"/>
+                                                                <path fill="#fdc857" d="M449.39 505V361.71a66 66 0 0 0-42.95-61.843l-67.69-25.23a33 33 0 0 1-21.475-30.922V220.74H236.11v22.975a33 33 0 0 1-21.474 30.922l-67.691 25.23a66 66 0 0 0-42.95 61.844v50.722h64.11V512H442.39a7 7 0 0 0 7-7Z"/>
+                                                                <path fill="#ffbc5b" d="M449.39 505V361.71a66 66 0 0 0-42.95-61.843l-67.69-25.23a33 33 0 0 1-21.475-30.922V220.74H236.11v22.975a33 33 0 0 1-21.474 30.922l-67.691 25.23a66 66 0 0 0-42.95 61.844v50.722h64.11V505a7 7 0 0 0 7 7H442.39a7 7 0 0 0 7-7Z"/>
+                                                                <path fill="#e88f37" d="M236.111 222.98v20.735a32.963 32.963 0 0 1-7.628 21.083l30.773-20.292-15.735-23.766h-4.014Z"/>
+                                                                <path fill="#f1b0a2" d="M338.75 274.637a33 33 0 0 1-21.475-30.922V220.74H236.11v22.975a33 33 0 0 1-21.474 30.922l62.056 21zM442.39 512h-53.074v-85.567h60.074V505a7 7 0 0 1-7 7z"/>
+                                                                <path fill="#ff7b4f" d="M354.486 512V287.782a10 10 0 0 1 12.31-9.73l38.98 9.253a10 10 0 0 1 7.69 9.73V512zm-77.793-219.495v8.418a359.412 359.412 0 0 1-37.877-13.426 359.281 359.281 0 0 1-25.29-11.764 7.013 7.013 0 0 1-3.81-6.457c.066-2.22.194-5.01.194-7.946a5.998 5.998 0 0 1 8.191-5.584c11.485 4.511 32.477 12.823 45.967 18.17a19.99 19.99 0 0 1 12.625 18.59z"/>
+                                                                <path fill="#ddd" d="M13.267 366.506a15.357 15.357 0 0 1 5.64-18.918L455.514 59.69c4.189-2.762 9.32-2.37 11.46.877l9.154 13.884c2.14 3.246.48 8.118-3.708 10.88L35.813 373.229a15.355 15.355 0 0 1-22.546-6.723Z"/>
+                                                                <path fill="#dc8768" d="M407.14 105.558 427 127.646l40.71 90.445a5.348 5.348 0 0 0 7.821 2.27 5.348 5.348 0 0 0 2.339-5.299l-17.293-109.557-14.322-25.739Z"/>
+                                                                <path fill="#dc8768" d="m411.7 112.474-12.476-26.956-67.088-73.053a5.348 5.348 0 0 1 .995-8.082 5.347 5.347 0 0 1 5.79-.062l93.88 59.056 18.014 23.305Z"/>
+                                                                <rect width="51.106" height="60.452" x="403.247" y="65.624" fill="#ab5249" rx="12.642" transform="rotate(56.602 428.8 95.85)"/>
+                                                                <path fill="#ddd" d="M252.256 230.506 35.813 373.23a15.355 15.355 0 0 1-22.546-6.723 15.357 15.357 0 0 1 5.64-18.918l216.394-142.69Z"/>
+                                                                <path fill="#ff7b4f" d="M276.693 292.498v8.425a237.511 237.511 0 0 0 63.482-25.142 6.977 6.977 0 0 0 3.503-6.25c-.064-2.26-.202-5.153-.202-8.201a5.998 5.998 0 0 0-8.191-5.584c-11.486 4.511-32.478 12.823-45.97 18.17a19.986 19.986 0 0 0-12.622 18.582Z"/>
+                                                                <path fill="#ab5249" d="M66.728 340.604a30.048 30.048 0 0 0 12.467-32.77l-60.287 39.754a15.349 15.349 0 0 0-6.012 17.94 30.173 30.173 0 0 0 6.093.632h.001a29.89 29.89 0 0 0 16.5-4.957Z"/>
+                                                                <path fill="#f1b0a2" d="M5.616 344.966 4.49 343.26a6 6 0 0 1 1.706-8.312l47.935-31.609a6 6 0 0 1 8.312 1.706l1.125 1.707a16 16 0 0 1-4.55 22.165l-31.238 20.599a16 16 0 0 1-22.165-4.55Z"/>
+                                                                <path fill="#ab5249" d="M373.976 132.504q-4.073-6.964-7.92-13.826l-47.421 31.27q6.03 10.673 12.63 21.57c1.002 1.652 2.008 3.274 3.013 4.903l47.3-31.19a902.119 902.119 0 0 1-7.602-12.727Z"/>
+                                                                <path fill="#ff7b4f" d="m404.167 219.454-28.819 16.639a11.406 11.406 0 0 1-14.936-3.202 796.828 796.828 0 0 1-36.147-54.372 797.644 797.644 0 0 1-50.784-98.47l48.507-28.005a907.112 907.112 0 0 0 44.988 87.46 907.029 907.029 0 0 0 40.82 63.545 11.382 11.382 0 0 1-3.629 16.405Z"/>
+                                                                <path fill="#dd9287" d="M206.792 185.093h12.905l-7-40.013h-9.893a9.282 9.282 0 0 0-9.125 10.978l3.988 21.45a9.282 9.282 0 0 0 9.125 7.585zm140.446 0h-12.905l7-40.013h9.893a9.282 9.282 0 0 1 9.126 10.978l-3.989 21.45a9.282 9.282 0 0 1-9.125 7.585zM282.976 272.2h2.078a41.945 41.945 0 0 0 26.261-9.238 99.062 99.062 0 0 0 8.188-7.361 32.929 32.929 0 0 1-2.228-11.886V220.74H236.11v19.618a98.939 98.939 0 0 0 20.604 22.604 41.945 41.945 0 0 0 26.261 9.238z"/>
+                                                                <path fill="#f1b0a2" d="M304.316 250.352a41.945 41.945 0 0 1-26.262 9.239h-2.078a41.945 41.945 0 0 1-26.261-9.239 99 99 0 0 1-37.018-77.195v-53.949a28.421 28.421 0 0 1 28.421-28.421h71.794a28.421 28.421 0 0 1 28.422 28.421v53.949a99 99 0 0 1-37.018 77.195Z"/>
+                                                                <path fill="#dd9287" d="m338.552 106.985.02-.006c-.098-.208-.214-.406-.318-.61a26.824 26.824 0 0 0-.417-.802 28.255 28.255 0 0 0-.653-1.116c-.143-.235-.28-.472-.43-.702a28.372 28.372 0 0 0-.862-1.238c-.118-.162-.227-.329-.348-.488q-.646-.85-1.353-1.65c-.028-.033-.06-.062-.087-.094q-.666-.745-1.383-1.441c-.136-.131-.278-.254-.416-.383-.382-.357-.77-.708-1.171-1.044-.17-.141-.344-.276-.516-.414-.388-.31-.782-.611-1.186-.9-.171-.123-.344-.242-.518-.36q-.661-.45-1.346-.865c-.17-.103-.34-.205-.51-.304-.46-.265-.93-.514-1.407-.753-.164-.083-.326-.169-.492-.248-.554-.266-1.119-.51-1.692-.74-.095-.038-.187-.081-.282-.118a28.33 28.33 0 0 0-10.273-1.922h-71.794a28.421 28.421 0 0 0-28.421 28.421v19.74a17.963 17.963 0 0 0 17.876 3.836l70.22-23.28a8.648 8.648 0 0 1 8.496 1.771l18.645 16.726a11.281 11.281 0 0 0 13.4 1.325v-20.118a28.26 28.26 0 0 0-2.782-12.223Z"/>
+                                                                <path fill="#343c4a" d="M248.433 197.44a3.58 3.58 0 0 1 3.016-3.543 163.719 163.719 0 0 1 51.438 0 3.58 3.58 0 0 1 3.014 3.543v10.709a3.59 3.59 0 0 1-4.11 3.546 175.066 175.066 0 0 0-49.252 0 3.588 3.588 0 0 1-4.106-3.545Z"/>
+                                                                <path fill="#eb9c8d" d="M287.628 182.521v5.519a10.613 10.613 0 0 1-10.613 10.613 10.613 10.613 0 0 1-10.613-10.613v-5.519a3 3 0 0 1 3-3h15.226a3 3 0 0 1 3 3Z"/>
+                                                                <path fill="#ddd" d="m327.934 124.001-25.448-22.829 6.645-23.187h37.802v37.536a11.392 11.392 0 0 1-18.999 8.48Z"/>
+                                                                <path fill="#ff7b4f" d="m347.17 90.128-116.597 38.656a18.038 18.038 0 0 1-23.713-17.121V70.69a39.173 39.173 0 0 1 48.2-38.118l79.55 18.838a16.322 16.322 0 0 1 12.56 15.883Z"/>
+                                                                <path fill="#ddd" d="M302.502 43.807a247.892 247.892 0 0 1-54.795 28.9 247.151 247.151 0 0 1-40.847 11.466V106.5a237.174 237.174 0 0 0 57.449-15.769 237.837 237.837 0 0 0 65.15-40.54l-26.957-6.384Z"/>
+                                                                <path fill="#eb9c8d" d="M103.996 404.467v7.966a7.976 7.976 0 0 1-7.944-8.684l1.028-11.523Z"/>
+                                                                <path fill="#24242b" d="m481.327 214.515-17.176-108.836a16.242 16.242 0 0 0 2.208-12.159l7.987-5.267c5.793-3.816 7.904-10.871 4.705-15.73l-9.157-13.878a9.86 9.86 0 0 0-7.619-4.259 14.038 14.038 0 0 0-8.692 2.382l-8.064 5.318a16.205 16.205 0 0 0-12.247-2.542L340.79 1.361a9 9 0 0 0-9.59.1 8.856 8.856 0 0 0-1.637 13.376l64.527 70.274a16.238 16.238 0 0 0-2.9 12.797l-31.88 21.02q-4.445-8.038-8.757-16.201l.119-12.566-.002-.015.002-.018V67.293a19.752 19.752 0 0 0-15.255-19.289l-79.55-18.838A42.673 42.673 0 0 0 203.36 70.69v40.973a21.275 21.275 0 0 0 5.841 14.756v15.161h-6.396a12.782 12.782 0 0 0-12.567 15.118l3.989 21.45a12.785 12.785 0 0 0 12.566 10.445h3.599a103.44 103.44 0 0 0 6.756 24.088L69 310.368a19.413 19.413 0 0 0-2.508-5.543l-1.125-1.707a9.5 9.5 0 0 0-13.161-2.701L4.271 332.025a9.51 9.51 0 0 0-2.702 13.161v.001l1.126 1.706a19.387 19.387 0 0 0 7.165 6.503 18.851 18.851 0 0 0 27.876 22.756l.241-.159 55.928 118.52a30.081 30.081 0 0 0 25.882 17.436q.902.05 1.795.05a30.052 30.052 0 0 0 25.878-14.503l17.12-27.792v38.346a3.5 3.5 0 0 0 7 0V396.368a3.5 3.5 0 0 0-7 0v12.565H107.5V361.71a62.265 62.265 0 0 1 16.827-42.657l24.47-16.135 63.768-23.77a364.058 364.058 0 0 0 24.9 11.578 364.329 364.329 0 0 0 35.728 12.8V508.5a3.5 3.5 0 0 0 7 0V303.66a240.122 240.122 0 0 0 60.938-24.398l10.642 3.966a13.528 13.528 0 0 0-.787 4.554V508.5a3.5 3.5 0 0 0 7 0V287.782a6.5 6.5 0 0 1 8.001-6.324l38.98 9.253a6.478 6.478 0 0 1 5 6.324V508.5a3.5 3.5 0 0 0 7 0v-78.57h28.923v78.57a3.5 3.5 0 0 0 7 0V361.71a69.18 69.18 0 0 0-35.923-60.85v-3.825a13.453 13.453 0 0 0-10.382-13.135l-38.98-9.253a13.43 13.43 0 0 0-11.49 2.544c-.051.041-.095.089-.146.13l-8.924-3.326a37.039 37.039 0 0 0 .067-6.537c-.064-1.856-.136-3.96-.136-6.128a9.499 9.499 0 0 0-12.971-8.842c-2.732 1.073-6.177 2.43-10.279 4.049a29.365 29.365 0 0 1-2.956-12.827v-4.56a101.765 101.765 0 0 0 18.026-31.27 798.247 798.247 0 0 0 18.783 27.069 14.875 14.875 0 0 0 19.52 4.172l28.82-16.64a14.885 14.885 0 0 0 4.744-21.444 904.295 904.295 0 0 1-32.376-49.445l33.574-22.142a16.08 16.08 0 0 0 6.12 2.672 16.291 16.291 0 0 0 3.279.335 15.945 15.945 0 0 0 3.85-.48l39.409 87.549a8.852 8.852 0 0 0 16.921-3.626 9.639 9.639 0 0 0-.113-1.385Zm-64.36 94.48a62.192 62.192 0 0 1 28.923 52.715v61.22h-28.923Zm40.468-246.382a7.097 7.097 0 0 1 4.307-1.247 3.013 3.013 0 0 1 2.307 1.132l9.157 13.877c.923 1.4.036 4.223-2.713 6.033l-7.08 4.67-13.054-19.799ZM334.719 10.104a1.854 1.854 0 0 1 .344-2.807 1.878 1.878 0 0 1 1.993-.015l88.678 55.79-26.396 17.405ZM344.83 173.16v-24.58h6.397a5.78 5.78 0 0 1 5.683 6.839l-3.988 21.45a5.782 5.782 0 0 1-5.684 4.724h-2.753q.34-4.185.345-8.433ZM210.36 70.69a35.7 35.7 0 0 1 35.6-35.686 35.97 35.97 0 0 1 8.293.974l39.672 9.394a244.37 244.37 0 0 1-47.451 24.058 244.314 244.314 0 0 1-36.115 10.468Zm0 16.348a251.367 251.367 0 0 0 38.578-11.056 251.595 251.595 0 0 0 54.268-28.412l18.696 4.428A233.575 233.575 0 0 1 262.965 87.5a233.77 233.77 0 0 1-52.606 14.926Zm-3.568 94.555a5.782 5.782 0 0 1-5.684-4.724l-3.988-21.45a5.78 5.78 0 0 1 5.684-6.839h6.396v24.58q0 4.218.355 8.433Zm3.567-69.93v-2.152a240.795 240.795 0 0 0 55.293-15.548 240.751 240.751 0 0 0 64.73-39.957l3.42.81a12.777 12.777 0 0 1 9.869 12.477v20.308l-114.2 37.86a14.538 14.538 0 0 1-19.112-13.798Zm133.266-16.672-.167 17.532a54.975 54.975 0 0 1-13.247-13.085ZM8.539 343.038l-1.126-1.706a2.502 2.502 0 0 1 .711-3.463l47.936-31.608a2.501 2.501 0 0 1 3.463.71l1.125 1.707a12.515 12.515 0 0 1-3.554 17.317l-31.239 20.599a12.499 12.499 0 0 1-17.316-3.556Zm156.041 72.895v40.426l-23.079 37.465a23.505 23.505 0 0 1-41.266-2.298L43.88 372.101l27.546-18.165 29.074 51.457v7.001c0 .014-.004.026-.004.04s.004.025.004.038V425a3.5 3.5 0 0 0 7 0v-9.067ZM100.5 361.71v29.455l-23.217-41.09 31.085-20.498a69.279 69.279 0 0 0-7.868 32.133Zm105.84-87.713-31.48 11.734 31.493-20.766c-.024.864-.052 1.705-.08 2.493a36.994 36.994 0 0 0 .068 6.539Zm4.22-20.517a9.487 9.487 0 0 0-1.581 1.369L33.884 370.307a11.837 11.837 0 0 1-17.29-14.811 19.604 19.604 0 0 0 2.42.168 19.365 19.365 0 0 0 10.695-3.226l31.238-20.6a19.433 19.433 0 0 0 8.52-13.393l150.627-99.322a102.962 102.962 0 0 0 12.516 19.202v.94l-19.906 13.127a9.486 9.486 0 0 0-2.144 1.088Zm21.758-5.636a29.38 29.38 0 0 1-2.66 8.692c-2.335-.922-4.553-1.796-6.585-2.596Zm40.875 48.375a357.356 357.356 0 0 1-33.025-11.95 357.28 357.28 0 0 1-26.991-12.658c-.005-1.07.048-2.597.093-3.911.065-1.913.14-4.081.14-6.37a2.417 2.417 0 0 1 .327-1.234l1.9-1.253a2.44 2.44 0 0 1 1.185.16c11.787 4.63 33.853 13.37 45.957 18.166a16.408 16.408 0 0 1 10.414 15.336Zm3.5-16.074a23.412 23.412 0 0 0-11.336-9.484 34044.48 34044.48 0 0 0-29.175-11.548 36.396 36.396 0 0 0 3.352-13.182 101.25 101.25 0 0 0 7.986 7.149 45.625 45.625 0 0 0 28.46 10.01h2.07a45.628 45.628 0 0 0 28.462-10.01c2.58-2.073 5.035-4.26 7.376-6.539a36.317 36.317 0 0 0 3.315 12.572c-8.009 3.165-17.807 7.044-29.175 11.548a23.407 23.407 0 0 0-11.335 9.484Zm59.87-21.142a2.485 2.485 0 0 1 .915-.178 2.54 2.54 0 0 1 1.406.44 2.477 2.477 0 0 1 1.092 2.065c0 2.289.075 4.457.14 6.37.047 1.358.102 2.943.093 4.016a233.96 233.96 0 0 1-60.016 24.735v-3.946a16.408 16.408 0 0 1 10.413-15.336c21.38-8.472 37.271-14.753 45.957-18.166Zm1.267-85.843a95.993 95.993 0 0 1-3.386 25.303 3.498 3.498 0 0 0-.217.8 94.735 94.735 0 0 1-19.404 36.079c-.055.054-.1.115-.152.173a96.297 96.297 0 0 1-12.541 12.106 38.605 38.605 0 0 1-24.08 8.469h-2.07a38.605 38.605 0 0 1-24.08-8.47 95.503 95.503 0 0 1-35.7-74.46v-41.795a21.124 21.124 0 0 0 8.628 1.858 21.74 21.74 0 0 0 6.847-1.117l73.061-24.222 20.858 18.722a14.4 14.4 0 0 0 12.236 3.627Zm.928-50.432a7.708 7.708 0 0 1-8.49-1.332l-17.88-16.049 10.89-3.61a62.4 62.4 0 0 0 18.79 18.26 7.865 7.865 0 0 1-3.31 2.73Zm66.178 82.333a7.886 7.886 0 0 1-2.516 11.358l-28.822 16.64a7.897 7.897 0 0 1-10.355-2.225 791.24 791.24 0 0 1-21.775-31.614 102.416 102.416 0 0 0 2.202-10.627h3.568a12.785 12.785 0 0 0 12.567-10.445l3.988-21.45a12.782 12.782 0 0 0-12.566-15.118h-6.397V127.17a14.575 14.575 0 0 0 5.027-7.496c.01-.03.015-.062.024-.093a14.942 14.942 0 0 0 .458-2.45q2.379 4.365 4.796 8.682c.009.015.014.03.023.045l.005.005c2.903 5.2 5.836 10.35 8.796 15.405q3.254 5.566 6.614 11.103c.017.028.027.059.045.087.007.01.017.017.024.028a911.537 911.537 0 0 0 34.294 52.576ZM374.658 145.6q-2.351-3.928-4.657-7.869a873.49 873.49 0 0 1-7.265-12.678l31.31-20.644 13.053 19.796Zm44.73-20.335a9.07 9.07 0 0 1-4.776-2.652l-.01-.012a9.22 9.22 0 0 1-1.007-1.26L399.38 99.784a9.157 9.157 0 0 1-.84-1.599l-.045-.121a9.155 9.155 0 0 1 3.484-10.944l29.36-19.36a9.08 9.08 0 0 1 5.014-1.513 9.231 9.231 0 0 1 1.858.19 9.077 9.077 0 0 1 4.604 2.47 9.223 9.223 0 0 1 1.19 1.453l14.214 21.557a9.151 9.151 0 0 1 .756 1.418c.006.017.015.032.022.048a9.151 9.151 0 0 1-3.379 11.199l-29.36 19.36a9.077 9.077 0 0 1-6.87 1.323Zm54.218 92.171a1.853 1.853 0 0 1-2.705-.783l-39.488-87.725 26.557-17.512 16.435 104.14a2.426 2.426 0 0 1 .036.344 1.855 1.855 0 0 1-.835 1.537ZM303.44 190.443a167.619 167.619 0 0 0-12.357-1.499c.02-.3.046-.6.046-.904v-8.519a3.5 3.5 0 1 0-7 0v8.519a7.113 7.113 0 1 1-14.226 0v-8.519a3.5 3.5 0 1 0-7 0v8.519c0 .315.027.624.048.934-4.068.347-8.104.838-12.037 1.467a7.04 7.04 0 0 0-5.983 6.999v10.71a7.089 7.089 0 0 0 7.111 7.083 7.244 7.244 0 0 0 .993-.068 172.857 172.857 0 0 1 24.299-1.715h.19a172.387 172.387 0 0 1 23.772 1.705 7.084 7.084 0 0 0 8.105-7.005v-10.71a7.032 7.032 0 0 0-5.96-6.997ZM302.4 208.15l-.118.075a178.124 178.124 0 0 0-50.221.008c-.02.003-.064.011-.131-.083v-10.71l.073-.084a158.86 158.86 0 0 1 13.251-1.532 14.09 14.09 0 0 0 23.537-.025c4.49.325 9.035.84 13.549 1.557.004 0 .056.083.06.084Zm-48.07-57.706a3.5 3.5 0 0 0 2.656-6.476 32.122 32.122 0 0 0-12.893-2.378 31.717 31.717 0 0 0-11.281 2.378 3.5 3.5 0 1 0 2.658 6.476 24.784 24.784 0 0 1 18.86 0Zm66.888-6.476a31.78 31.78 0 0 0-24.175 0 3.5 3.5 0 1 0 2.658 6.476 24.73 24.73 0 0 1 8.801-1.856 25.034 25.034 0 0 1 10.06 1.856 3.5 3.5 0 0 0 2.656-6.476Zm-72.819 19.55v-6.848a3.5 3.5 0 0 0-7 0v6.847a3.5 3.5 0 0 0 7 0Zm38.047 57.684a25.063 25.063 0 0 1-10.06 1.857 24.726 24.726 0 0 1-8.801-1.856 3.5 3.5 0 0 0-2.658 6.475 31.713 31.713 0 0 0 11.282 2.379q.41.01.818.01a31.668 31.668 0 0 0 12.076-2.388 3.5 3.5 0 0 0-2.657-6.477Zm22.685-68.032a3.5 3.5 0 0 0-3.5 3.5v6.847a3.5 3.5 0 0 0 7 0v-6.847a3.5 3.5 0 0 0-3.5-3.5Z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2 mb-1">किसान</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeFor&pointvalue=4" class="wow slideInRight shadow plan-box p-2 text-center rounded-2 pcolor5 text-decoration-none d-block mb-3">
+                                                    <div class="plan-conten pt-1">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 512 512" id="indian-woman">
+                                                                <path fill="#3b3f4d" d="M161.171 273.772V102.209A94.828 94.828 0 0 1 256 7.38a94.828 94.828 0 0 1 94.829 94.829v171.563"/>
+                                                                <path fill="#313440" d="M256 7.38q-4.81 0-9.5.473a94.839 94.839 0 0 1 85.329 94.356v171.563h19V102.209A94.829 94.829 0 0 0 256 7.38Z"/>
+                                                                <path fill="#ff8e66" d="M170.7 455.27h170.6V512H170.7z"/>
+                                                                <path fill="#ff8e66" d="m437.28 453.87-20.54-70.39-19.77-67.78a79.984 79.984 0 0 0-76.59-56.93h-7.88a24.02 24.02 0 0 1-24-24v-13.22h-65v13.22a24.026 24.026 0 0 1-24 24h-7.87a79.993 79.993 0 0 0-76.6 56.93L74.72 453.87a30.002 30.002 0 0 0 31.98 38.24l124.84-13.34 2.11-.22a25.002 25.002 0 0 0 21.57-18.68 24.742 24.742 0 0 0 .78-6.18 25.005 25.005 0 0 0 22.35 24.86l13.83 1.48 113.12 12.08a29.985 29.985 0 0 0 12.07-1.15l.58-.18c.1-.03.21-.06.31-.1.52-.18 1.03-.37 1.53-.58.01 0 .01 0 .02-.01a30.231 30.231 0 0 0 15.46-14.28c.23-.45.45-.9.65-1.36.13-.3.26-.6.38-.9.12-.3.24-.61.36-.91q.18-.465.33-.93a29.73 29.73 0 0 0 .29-17.84ZM170.7 440.83l-39.71 2.48 21.19-55.88c.76 2.1 3.99 12.92 5.12 15.04a51.213 51.213 0 0 0 13.4 15.98Zm171.73 2.48v-31.95s11.55-5.64 13.28-8.93c.52-.99 2.88-17.96 3.32-18.95l21.98 59.83Z"/>
+                                                                <path fill="#ff7c4e" d="M233.937 453.69a24.742 24.742 0 0 1-.78 6.18 25.002 25.002 0 0 1-21.57 18.68L94.852 491.02a29.943 29.943 0 0 0 11.848 1.09l126.95-13.559a24.88 24.88 0 0 0 11.322-4.147 24.973 24.973 0 0 1-11.035-20.713zm203.343.18-20.54-70.39-19.77-67.78a79.985 79.985 0 0 0-76.59-56.93h-7.88a24.02 24.02 0 0 1-24-24v-13.22h-22.063v13.22a24.02 24.02 0 0 0 24 24h7.88a79.985 79.985 0 0 1 76.59 56.93l19.77 67.78 20.54 70.39a29.73 29.73 0 0 1-.29 17.84q-.15.465-.33.93c-.12.3-.24.61-.36.91-.12.3-.25.6-.38.9-.2.46-.42.91-.65 1.36a30.231 30.231 0 0 1-15.46 14.28c-.01.01-.01.01-.02.01-.5.21-1.01.4-1.53.58-.1.04-.21.07-.31.1l-.58.18c-.07.022-.142.039-.212.06l10.205 1.09a29.985 29.985 0 0 0 12.07-1.15l.58-.18c.1-.03.21-.06.31-.1.52-.18 1.03-.37 1.53-.58.01 0 .01 0 .02-.01a30.231 30.231 0 0 0 15.46-14.28c.23-.45.45-.9.65-1.36.13-.3.26-.6.38-.9.12-.3.24-.61.36-.91q.18-.465.33-.93a29.73 29.73 0 0 0 .29-17.84z"/>
+                                                                <path fill="#3ce568" d="m366.52 273.42-6.11 14.92a79.884 79.884 0 0 0-41.28-26.81l1.24-2.76h.01a79.899 79.899 0 0 1 46.14 14.65Z"/>
+                                                                <path fill="#ffc166" d="M311 126.62h16a24 24 0 0 1 24 24 24 24 0 0 1-24 24h-16v-48zm-110 1-16-1a24 24 0 0 0-24 24 24 24 0 0 0 24 24l16 1"/>
+                                                                <path fill="#ff7c4e" d="m374.28 279.66-82.1 200.37-12.32 30.07h-62.42l14.1-31.33 98.78-219.38a79.965 79.965 0 0 1 43.96 20.27Z"/>
+                                                                <path fill="#ff7c4e" d="M361.19 383.48c-.11 1.39-.28 2.81-.53 4.25a48.112 48.112 0 0 1-3.51 11.74c-.44.99-.92 1.97-1.44 2.96a49.088 49.088 0 0 1-5.82 8.69 53.072 53.072 0 0 1-15 12.29 52.76 52.76 0 0 1-3.61 1.81 7.503 7.503 0 0 1-6.21-13.66 36.959 36.959 0 0 0 17.37-16.11c6.07-11.53 3.88-23.14 1.91-29.26 0-.01-.01-.02-.01-.03a36.04 36.04 0 0 0-1.49-3.9c-.05-.11-.1-.22-.14-.33a.562.562 0 0 1-.04-.12 7.494 7.494 0 0 1 13.82-5.78c.05.11.1.23.16.36.41.91 1.02 2.41 1.68 4.37a57.9 57.9 0 0 1 2.86 22.72zM256 455.27v7.23a25.005 25.005 0 0 1-22.35 24.86l-62.95 6.72v-38.81zm0 0v7.23a25.005 25.005 0 0 0 22.35 24.86l62.95 6.72v-38.81z"/>
+                                                                <path fill="#ffc97a" d="m301.75 256.22-.41.38-25.83 25.64a27.692 27.692 0 0 1-39.02 0l-25.83-25.64-.12-.53a23.948 23.948 0 0 0 12.96-21.3v-13.22h65v13.22a23.96 23.96 0 0 0 13.25 21.45Z"/>
+                                                                <path fill="#ffe966" d="M366.52 273.42 268.765 512h-62.418L320.37 258.77h.01a79.899 79.899 0 0 1 46.14 14.65Z"/>
+                                                                <path fill="#ffe236" d="m366.52 273.42-6.11 14.92a79.884 79.884 0 0 0-41.28-26.81l1.24-2.76h.01a79.899 79.899 0 0 1 46.14 14.65Z"/>
+                                                                <path fill="#ff7c4e" d="M191.63 421.53a7.548 7.548 0 0 1-9.95 3.68 54.789 54.789 0 0 1-10.98-6.76 51.213 51.213 0 0 1-13.4-15.98 48.674 48.674 0 0 1-2.82-6.34c-6.98-19.15.09-36.9 1.74-40.58a7.498 7.498 0 1 1 13.69 6.12c-1.32 2.96-7.51 18.49.63 33.74a37.658 37.658 0 0 0 17.42 16.17 7.503 7.503 0 0 1 3.67 9.95Z"/>
+                                                                <path fill="#ffcd85" d="M255.128 236.157c-36.089-.468-64.799-30.552-64.799-66.644v-47.856a18.327 18.327 0 0 1 18.183-18.3 46.925 46.925 0 0 0 24.102-6.803c19.779-12.01 22.528-33.248 22.805-35.728.646 2.936 6.08 25.793 28.453 36.597a50.969 50.969 0 0 0 20.104 5.004 18.365 18.365 0 0 1 17.695 18.293v49.772a65.671 65.671 0 0 1-66.543 65.665Z"/>
+                                                                <path fill="#ffc570" d="M303.976 102.427a50.967 50.967 0 0 1-20.104-5.004c-22.373-10.804-27.807-33.661-28.453-36.597a51.45 51.45 0 0 1-6.572 19.114 50.41 50.41 0 0 0 40.129 22.487 18.365 18.365 0 0 1 17.695 18.293v49.772a65.666 65.666 0 0 1-58.237 65.234 65.667 65.667 0 0 0 73.237-65.234V120.72a18.365 18.365 0 0 0-17.695-18.293Z"/>
+                                                                <circle cx="256" cy="122.619" r="5" fill="#f66"/>
+                                                                <path fill="#ff4e4e" d="M256 117.62a4.96 4.96 0 0 0-1.749.33 4.977 4.977 0 0 1 0 9.338 4.993 4.993 0 1 0 1.749-9.669Z"/>
+                                                                <ellipse cx="225.133" cy="149.452" fill="#4a4f60" rx="5" ry="8.811"/>
+                                                                <ellipse cx="286.867" cy="149.452" fill="#4a4f60" rx="5" ry="8.811"/>
+                                                                <path fill="#ffc166" d="M257.504 205.641h-.093a17.66 17.66 0 0 1-12.248-5.117 5 5 0 1 1 7.07-7.07 7.668 7.668 0 0 0 5.23 2.187 7.877 7.877 0 0 0 5.308-2.186 5 5 0 0 1 7.074 7.068 17.641 17.641 0 0 1-12.341 5.118Z"/>
+                                                                <path fill="#ffcd85" d="M256 368.52v85.17a25.005 25.005 0 0 1-22.35 24.86L106.7 492.11l20.56-41.31 3.73-7.49 4.1-.26 35.61-2.22 14.02-.88 28.68-1.79 8.48-26.61a56.295 56.295 0 0 1 13.85-22.76zm0 0v85.17a25.005 25.005 0 0 0 22.35 24.86l126.951 13.56-20.56-41.31-3.73-7.49-4.1-.26-35.61-2.22-14.02-.88-28.68-1.79-8.48-26.61a56.294 56.294 0 0 0-13.85-22.76z"/>
+                                                                <path fill="#ffc570" d="M285.966 478.55a25.005 25.005 0 0 1-22.35-24.86v-77.555l-7.615-7.615v85.17a25.005 25.005 0 0 0 22.35 24.86Z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2 mb-1">महिला</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeFor&pointvalue=2" class="wow slideInRight shadow plan-box p-2 text-center rounded-2 pcolor6 text-decoration-none d-block mb-3">
+                                                    <div class="plan-conten pt-1 ">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="student">
+                                                                <path fill="#1d252d" d="M16 41h32a4 4 0 0 1 4 4v16H12V45a4 4 0 0 1 4-4Z"/>
+                                                                <path fill="#f4a490" d="M48 46.7a65.247 65.247 0 0 0-8.279-3.96C38.55 41.671 37.418 39.047 37 38v-2H27v2c-.418 1.051-1.55 3.675-2.721 4.744A65.247 65.247 0 0 0 16 46.7 16.094 16.094 0 0 0 7 61h50a16.094 16.094 0 0 0-9-14.3Z"/>
+                                                                <path fill="#e4f4fd" d="M48 46.7a65.125 65.125 0 0 0-8.28-3.96L32 46l-7.72-3.26A65.125 65.125 0 0 0 16 46.7 16.094 16.094 0 0 0 7 61h50a16.094 16.094 0 0 0-9-14.3Z"/>
+                                                                <path fill="#01cadb" d="M48 46.7a65.125 65.125 0 0 0-8.28-3.96L32 46l-7.72-3.26A65.125 65.125 0 0 0 16 46.7 38.671 38.671 0 0 1 17.39 61h29.22A38.671 38.671 0 0 1 48 46.7Z"/>
+                                                                <path fill="#2e3d4c" d="M17.53 57.5c0 1.2-.05 2.37-.14 3.5h4.47c.09-1.13.14-2.3.14-3.5 0-5.39-.98-10.18-2.49-13.19-1.32.62-2.54 1.26-3.68 1.9a34.5 34.5 0 0 1 1.7 11.29Z"/>
+                                                                <path fill="#ffd5c5" d="M21 15v14.578c0 5.049 4.925 9.142 11 9.142s11-4.093 11-9.142V15Z"/>
+                                                                <path fill="#f4a490" d="M43 29a4 4 0 0 0 0-8zm-22 0a4 4 0 0 1 0-8z"/>
+                                                                <path fill="#1d252d" d="M32 3a20.778 20.778 0 0 0-2.88.2C22.21 4.19 17 8.67 17 14.04V25l11-7s11 7 19 7V14.04C47 7.94 40.28 3 32 3Z"/>
+                                                                <path fill="#2e3d4c" d="M46.47 57.5c0 1.2.05 2.37.14 3.5h-4.47c-.09-1.13-.14-2.3-.14-3.5 0-5.39.98-10.18 2.49-13.19 1.32.62 2.54 1.26 3.68 1.9a34.5 34.5 0 0 0-1.7 11.29Z"/>
+                                                                <path fill="#e4f4fd" d="M39.721 42.74h-.001L32 46l-7.72-3.26h-.001l-.001.002L32 61l7.722-18.258-.001-.002z"/>
+                                                                <path fill="#01727b" d="M34.72 54.59 32 61l-2.72-6.41 1.876-7.186h1.688l1.876 7.186z"/>
+                                                                <path fill="#0198a4" d="M34.661 46.339 32 44.172l-2.661 2.167L32 49l2.661-2.661z"/>
+                                                                <path fill="#c9dfeb" d="M37.998 40.204 32 44.172l5.293 4.313 2.429-5.743-1.724-2.538zM26.002 40.204 32 44.172l-5.293 4.313-2.429-5.743 1.724-2.538z"/>
+                                                                <path fill="#f4a490" d="M39.654 26.442a1 1 0 0 0-1.4.149 1.551 1.551 0 0 1-2.489-.081.989.989 0 0 0-1.414 0 1 1 0 0 0 0 1.414 3.545 3.545 0 0 0 5.468-.088.993.993 0 0 0-.165-1.394zm-9.925 1.394a1 1 0 0 0-1.564-1.246 1.557 1.557 0 0 1-2.489-.08.988.988 0 0 0-1.414 0 1 1 0 0 0 0 1.414 3.545 3.545 0 0 0 5.467-.088zm4.971 5.432a1 1 0 0 0 .01-1.414.991.991 0 0 0-1.414-.01 1.815 1.815 0 0 1-2.586.01.98.98 0 0 0-1.414-.01 1.008 1.008 0 0 0-.01 1.414 3.867 3.867 0 0 0 5.414.01z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2 mb-1">छात्र</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeFor&pointvalue=15" class="wow slideInRight shadow plan-box p-2 text-center rounded-2 pcolor7 text-decoration-none d-block mb-3">
+                                                    <div class="plan-conten pt-1">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 130 130" id="old-man">
+                                                                <path fill="#fcbd88" d="M42.46,92H87.11V73.29l-4.57-2.6-3.82-2.22-1-6.63L49.05,65l.24,4.16-6.83,3.37Z"/>
+                                                                <path fill="#e6a372" d="M87.1,73.29V86.63l-6.79,5.09L49.2,67.51l-.14-2.33V65l.69-.07,27.93-3.1,1.06,6.63,3.8,2.22Z"/>
+                                                                <path fill="#596a86" d="M116,111.9a9,9,0,0,1-5.29,8.11,98.91,98.91,0,0,1-46.57,8.86c-1.42-.06-10.6-.64-15.92-2-.39-.1-.78-.15-1.17-.23L44,126a118.56,118.56,0,0,1-25-8.9,9,9,0,0,1-5-8.32c.05-1.69.15-3.73.35-6.09C15,95.27,14,89.31,22.69,83.43c2.64-1.79,6.06-3.76,9.54-5.64s7-3.66,9.91-5.08l.06,0,2.55-1.25A19.12,19.12,0,0,0,56,84.18c10.36,4,23.4-1.6,29-12.07l4,2.31.09,0c5,2.94,11.24,6.77,17,10.81C114.86,91.38,116.06,103.84,116,111.9Z"/>
+                                                                <path fill="#5f728e" d="M113.57,96.21l0,0A98.68,98.68,0,0,1,67,105.09c-1.42-.06-10.59-.64-15.91-2-.39-.1-.78-.14-1.17-.22-1-.22-2.07-.46-3.08-.69a118.65,118.65,0,0,1-25-8.89,8.94,8.94,0,0,1-4.31-4.64,17.28,17.28,0,0,1,5.18-5.26c2.64-1.79,6.06-3.76,9.54-5.64s7-3.66,9.91-5.08l.06,0,2.55-1.25A19.12,19.12,0,0,0,56,84.18c10.36,4,23.4-1.6,29-12.07l4,2.31.09,0c5,2.94,11.24,6.77,17,10.81C109.78,87.82,112.11,91.82,113.57,96.21Z"/>
+                                                                <path fill="#99726b" d="M91.42,41.92l-.89-.49a4,4,0,0,0,.21-3.34,1.23,1.23,0,0,0-1-.73c-1.37-.16-2.65,2.38-3,3.29l-1-.36c.16-.43,1.63-4.23,4.06-3.94a2.26,2.26,0,0,1,1.82,1.28A5,5,0,0,1,91.42,41.92Z"/>
+                                                                <path fill="#fcbd88" d="M42.34,12.88C46.52,1.66,61.94,1.09,61.94,1.09A23.45,23.45,0,0,1,71,2.2c6.9,2.13,13.15,6.67,14.34,10.11,1.71,5-1.72,6.66-1.91,14.46s7.23,5.71,7.23,5.71h0a6.17,6.17,0,0,1,4.14,5.83c0,2.46-.06,5.4-2,8.44-3.23,4.94-7.42,3.8-7.42,3.8s-4.44.93-6.45,7.71C75.89,68.45,64.59,73.52,53,70,29.56,62.76,40.19,18.66,42.34,12.88Z"/>
+                                                                <path fill="#d8d8d8" d="M40.75,27.8l.84-12.51S36.8,19.9,35.9,23.44c-1.43,5.6.83,12.19,2.28,13.39Z"/>
+                                                                <path fill="#424c54" d="M80.86,32.31,76,32.19V31a4.44,4.44,0,0,0-4.43-4.43H64.31A4.42,4.42,0,0,0,60,30H53.26a4.17,4.17,0,0,0-3.79-2.46H42.82a4.16,4.16,0,0,0-4.16,4.16v4.56a4.16,4.16,0,0,0,4.16,4.16h6.65a4.17,4.17,0,0,0,4.16-4.16V32.05h6.25v4a4.43,4.43,0,0,0,4.43,4.43h7.24A4.44,4.44,0,0,0,76,36V34.22l4.83.12h0a1,1,0,0,0,0-2Zm-29.26,4a2.14,2.14,0,0,1-2.13,2.13H42.82a2.13,2.13,0,0,1-2.13-2.13V31.71a2.13,2.13,0,0,1,2.13-2.13h6.65a2.14,2.14,0,0,1,2.13,2.13ZM74,36a2.41,2.41,0,0,1-2.4,2.4H64.31a2.4,2.4,0,0,1-2.4-2.4V31a2.4,2.4,0,0,1,2.4-2.4h7.24A2.41,2.41,0,0,1,74,31Z"/>
+                                                                <ellipse cx="67.86" cy="33.43" fill="#424c54" rx="2.25" ry="3.2"/>
+                                                                <path fill="#26385f" d="M64.81,31.36a5.69,5.69,0,0,1,5.47.89"/>
+                                                                <path fill="#424c54" d="M70.28,33.26a1,1,0,0,1-.61-.2,4.63,4.63,0,0,0-4.45-.77,1,1,0,0,1-1.33-.53,1,1,0,0,1,.51-1.33,6.67,6.67,0,0,1,6.49,1,1,1,0,0,1,.2,1.42A1,1,0,0,1,70.28,33.26Z"/>
+                                                                <ellipse cx="45.9" cy="33.91" fill="#424c54" rx="2.25" ry="3.2"/>
+                                                                <path fill="#26385f" d="M48.31,31.84a5.67,5.67,0,0,0-5.46.89"/>
+                                                                <path fill="#424c54" d="M42.85 33.75a1 1 0 0 1-.82-.41 1 1 0 0 1 .21-1.43 6.7 6.7 0 0 1 6.49-1 1 1 0 0 1-.82 1.86 4.67 4.67 0 0 0-4.45.77A1 1 0 0 1 42.85 33.75zM41.22 26.26a1 1 0 0 1-.61-1.83 11.52 11.52 0 0 1 10-1.93A1 1 0 0 1 50 24.43a9.44 9.44 0 0 0-8.18 1.62A1 1 0 0 1 41.22 26.26zM74.84 25.93a1 1 0 0 1-.61-.2 11.67 11.67 0 0 0-10.11-2 1 1 0 0 1-.64-1.93 13.74 13.74 0 0 1 12 2.31 1 1 0 0 1 .21 1.42A1 1 0 0 1 74.84 25.93z"/>
+                                                                <path fill="#e6a372" d="M55.82,46.76a2.28,2.28,0,0,1-1.3-.38,2.86,2.86,0,0,1-1.05-2.72,1,1,0,0,1,1.07-1,1,1,0,0,1,1,1.07c0,.6.1.9.16.94s.44.09,1.25-.29a1,1,0,0,1,.85,1.85A4.76,4.76,0,0,1,55.82,46.76Z"/>
+                                                                <path fill="#d8d8d8" d="M92.85,14.6C91.14,3.94,71,2.2,71,2.2s10.72,5,12.43,9-4,6.47-4.18,10.08c-.09,1.74.74,7.35,1.8,12a21.93,21.93,0,0,1-.35,11c-.87,3-1.78,5.75-2.77,8.28a37.5,37.5,0,0,1-4.06,5.54,4.15,4.15,0,0,1-7-1.22l-1.09-2.77a6.62,6.62,0,0,0-5.53-4.14L51,49.08a6.61,6.61,0,0,0-5.5,2.15l-.81.9a2.92,2.92,0,0,1-4.93-1A31.32,31.32,0,0,1,38,43c0,3.56-.32,15.91,3.12,23.6,4,9.06,14.95,11.4,21.12,9.73,6.33-1.71,10.41-5.42,13.92-10.85a80.25,80.25,0,0,0,7.49-14.95c.79-2.26,1.43-9.63,1.73-13.78A9.53,9.53,0,0,1,90,33a4.24,4.24,0,0,0,2.28-3.11C95.44,17.56,92.85,14.6,92.85,14.6ZM65.47,63.71C54.6,65.59,56,59.06,56,59.06l-4.23-.55s-.3,6.31-4.93,3.75a12.45,12.45,0,0,1-3.76-3.82l3.79-3.17a5.89,5.89,0,0,1,4.33-1.35l6.65.62a5.92,5.92,0,0,1,4.62,3.05C63.92,60.18,65.76,63.66,65.47,63.71Z"/>
+                                                                <path fill="#fff" d="M73.85,63.35a27.06,27.06,0,0,1-10.31,8,17.52,17.52,0,0,1-12.85.45,13,13,0,0,1-8.21-9.55c1.39,1.49,2.87,3,4.79,3.69s4.45.08,5.28-1.78a6.34,6.34,0,0,0,3.73,3.33,14.61,14.61,0,0,0,5.06.74,10.3,10.3,0,0,0,4.8-.8,4.17,4.17,0,0,0,2.45-3.92c5.38-2,9.54-7.3,12.68-11.43-.79.21-1.15,1.56-1.5,2.2-.58,1.07-1.17,2.14-1.8,3.18A48.39,48.39,0,0,1,73.85,63.35Z" opacity=".37"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2 mb-1">बुजुर्ग</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                                <a href="https://yuvaportal.mp.gov.in/Schemes" target="yuvaporta" class="counter2  wow slideInRight shadow plan-box p-2 text-center rounded-2 pcolor8 text-decoration-none d-block mb-3">
+                                                    <div class="plan-conten pt-1">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500" id="young-boy">
+                                                                <path d="M257.002 2.15187L271.642 1.94402C277.155 1.937 282.947 1.60661 288.4 2.52796C323.182 8.40528 353.119 31.5534 364.34 65.7196C367.797 76.2457 368.034 84.9485 367.753 96L364.945 132.5C364.746 134.312 364.59 136.516 363.835 138.172L363.486 138.953C363.072 139.887 365.99 141.65 366.687 142.342C373.532 149.132 375.248 160.742 375.262 170.069C375.287 186.888 367.808 202.772 348.889 204.49C348.575 226.834 333.982 254.121 317.322 268.004L317 306.12C318.812 307.31 322.425 307.63 324.588 308.133L339.625 311.336C342.787 311.96 346.043 312.867 349.226 313.311L354.185 314.315C360.824 315.3 367.439 317.073 374 318.495L410.58 326.125C448.786 332.504 478.222 364.628 480.457 403.793C480.761 409.111 480.5 414.605 480.499 419.941L480.531 501.085C480.319 505.556 477.572 507.576 473.297 508.487L473 508.548C470.374 509.1 467.376 508.964 464.699 508.973L253.187 508.984C250.079 509.232 246.771 509.01 243.637 509.006L39.894 508.948C35.7675 508.763 32.274 505.901 31.6851 501.692L31.6444 501.375C31.1242 497.583 31.4874 493.38 31.4866 489.539L31.4898 426.329C31.495 416.118 31.0183 405.854 32.6901 395.745C37.9901 363.698 59.5649 337.644 91.3322 328.67C99.5007 326.363 107.952 325.205 116.177 323.177L196.291 305.468C195.564 301.31 195.909 296.761 195.904 292.536L195.825 268.134C195.196 267.332 194.485 266.991 193.689 266.389C176.616 253.465 162.489 225.905 162.792 204.838C142.222 202.248 136.03 183.638 136.764 165.283C137.046 158.232 140.516 151.485 144.802 146.054C148.049 141.941 147.826 143.427 147.352 138.25L146.515 127.75C145.515 113.636 143.758 99.297 144.236 85.1491C145.104 59.4449 163.551 34.2234 189.95 30.8166C194.282 30.2576 198.713 30.3279 203.068 30.4978C214.565 13.6978 236.633 2.82926 257.002 2.15187ZM232.652 370.154C229.872 369.067 227.282 367.613 224.729 366.082C222.4 364.235 219.868 362.705 217.578 360.782C207.762 352.539 202.222 342.463 197.618 330.84L197.25 331.234C190.432 331.332 183.651 333.122 177 334.506L118.516 346.83C110.715 348.31 102.668 349.593 95.2179 352.424C73.0944 360.832 57.552 381.677 54.7197 405.125C54.1159 410.124 54.2247 415.183 54.2139 420.209L54.7876 492.943L100.739 492.867L100.718 418.978C100.714 416.241 100.448 413.179 100.783 410.473C101.983 400.775 117.291 398.317 117.48 411.707C119.387 411.668 121.18 411.742 123.067 412.081C124.109 415.416 124.093 418.948 124.173 422.416L124.256 472.257C124.256 479.065 123.961 486.009 124.54 492.943L386.499 492.863L386.453 419.468C386.436 416.496 386.221 413.428 386.401 410.468C386.971 401.079 401.976 399.094 403.534 410.67C411.71 411.06 409.77 412.05 409.783 420.061L409.589 492.877L464.325 492.874L464.294 413.284C464.29 409.833 464.614 405.583 463.785 402.223L462.899 397.297C460.05 381.747 451.767 365.101 438.469 355.902C435.228 353.179 431.27 350.616 427.414 348.895C418.65 343.641 401.621 341.935 391.612 339.822L322.981 324.965C320.854 324.488 318.703 324.102 316.7 323.204C310.024 363.106 270.451 384.266 232.652 370.154ZM54.7775 492.755L54.2139 420.209C54.2247 415.183 54.1159 410.124 54.7197 405.125C57.552 381.677 73.0944 360.832 95.2179 352.424C102.668 349.593 110.715 348.31 118.516 346.83L177 334.506C183.651 333.122 190.432 331.332 197.25 331.234L197.618 330.84L196.29 323.204L108.75 341.72C100.042 343.289 91.4939 345.193 83.555 349.253C65.1724 358.654 52.7914 377.281 49.3115 397.398C47.1086 410.132 47.9583 423.525 47.9594 436.415L47.9651 492.848L54.7775 492.755ZM167.377 105.358C164.666 92.5804 168.185 73.1946 177.522 63.875C185.018 56.3923 196.267 52.4885 206.725 52.4841L213.875 52.595C219.617 52.7596 218.372 50.9399 221.771 45.5C232.732 27.9587 255.752 25.7258 274.559 25.7398C295.101 25.7552 309.523 28.8845 326.867 39.625L327.432 39.1869C308.789 22.5302 292.998 19.4531 269.004 19.5491C251.582 19.6187 227.704 21.6571 218.049 38.6098C214.739 44.4219 216.089 46.6756 209.455 46.7761L199.041 46.9007C168.626 47.684 158.419 74.4863 160.921 100.467L162.343 116.615C162.604 121.475 162.638 126.365 163.164 131.204C163.432 133.669 162.946 136.722 166.689 135.375C167.965 126.285 166.015 115.553 167.377 105.358ZM117.526 411.707L117.669 492.834L124.509 492.797C123.961 486.009 124.256 479.065 124.256 472.257L124.173 422.416C124.093 418.948 124.109 415.416 123.067 412.081C121.18 411.742 119.387 411.668 117.526 411.707ZM348.179 150.375C347.923 156.088 348.205 161.843 348.27 167.559L348.647 181.586C348.773 183.351 348.744 185.177 349.125 186.908C350.818 188.29 353.963 185.898 354.915 184.517L355.234 183.998C358.276 177.854 359.427 166.791 357.823 160.25L357.73 159.843C357.345 158.202 356.616 156.692 355.683 155.295L355.447 154.937C354.252 153.163 350.459 149.747 348.179 150.375ZM162.114 152.761C155.758 155.053 152.422 166.22 153.084 172.25L153.114 172.563C153.553 176.864 155.556 181.785 158.262 185.129C159.251 186.145 160.207 187.332 161.591 187.785L162.041 187.5C162.405 184.87 162.272 182.121 162.289 179.465L162.593 167.574C162.848 162.655 163.997 157.773 164.375 152.873C163.643 152.627 162.874 152.729 162.114 152.761ZM345.988 116.979L346.018 126.291C346.118 135.246 348.236 134.708 349.036 126.975L349.764 116.057L348.88 113.038C348.543 112.531 348.52 112.211 348.438 111.624C347.986 113.707 348.406 116.301 345.988 116.979Z" transform="scale(2.92969)"/>
+                                                                <path fill="#FFDDA1" d="M345.485 100.169C346.273 99.9821 347.4 99.9567 348.25 100.377L348.625 100.628C349.034 100.828 349.558 100.919 350 101.127L351.014 100.423C350.891 102.406 350.911 104.577 350.524 106.519L350.015 104.309C343.934 103.126 347.036 102.003 345.959 107.83L345.485 100.169Z" transform="scale(2.92969)"/>
+                                                                <defs>
+                                                                    <linearGradient id="a" x1="348.431" x2="346.839" y1="103.522" y2="116.821" gradientUnits="userSpaceOnUse">
+                                                                        <stop offset="0" stop-color="#FFDDAE"/>
+                                                                        <stop offset="1" stop-color="#FFFFF9"/>
+                                                                    </linearGradient>
+                                                                </defs>
+                                                                <path fill="url(#a)" d="M345.984 107.83C347.036 102.003 343.934 103.126 350.015 104.309L350.524 106.519C350.383 109.409 350.494 113.309 349.719 116.057L348.88 113.038C348.543 112.531 348.52 112.211 348.438 111.624C347.986 113.707 348.406 116.301 345.976 116.979L345.984 107.83Z" transform="scale(2.92969)"/>
+                                                                <path fill="#fff" d="M403.525 410.67C411.71 411.06 409.77 412.05 409.783 420.061L409.788 492.826C407.678 492.594 405.236 492.885 403.247 492.806L403.262 421.899C403.263 418.167 403.133 414.386 403.525 410.67zM212 280.05C219.52 285.608 228.424 288.995 237.5 291.053L245.971 292.64C259.91 295.589 288.261 289.479 300.579 281.491L300.708 301.416C300.719 316.464 301.726 325.485 292.967 338.801L288.56 344.05C278.449 354.456 263.005 359.589 248.647 356.963 231.34 353.797 215.138 339.181 212.378 321.445 211.557 316.171 211.992 310.298 212 304.955L212 280.05z" transform="scale(2.92969)"/>
+                                                                <path fill="#FFBD5A" d="M167.51 105.358C164.666 92.5804 168.185 73.1946 177.522 63.875C185.018 56.3923 196.267 52.4885 206.725 52.4841L213.875 52.595C219.617 52.7596 218.372 50.9399 221.771 45.5C232.732 27.9587 255.752 25.7258 274.559 25.7398C295.101 25.7552 309.523 28.8845 326.867 39.625L327.432 39.1869C346.431 53.5564 353.415 77.5379 351.152 100.423L350 101.127C349.558 100.919 349.034 100.828 348.625 100.628L348.25 100.377C347.4 99.9567 346.273 99.9821 345.371 100.169C342.215 82.853 324.349 71.6716 308.929 66.5426C306.427 66.0533 309.792 57.4363 304.824 52.038C300.854 49.3724 295.868 48.7169 292.925 53.191C288.082 60.5541 294.871 67.5716 287.529 75.4263C275.342 88.4652 262.709 86.0167 246.277 86.0365L210.07 86.0411C193.514 86.0382 174.08 86.1341 167.51 105.358Z" transform="scale(2.92969)"/>
+                                                                <path fill="#FFDDA1" d="M304.824 52.038L305.245 51.125C314.532 49.701 314 62.3243 310.03 65.8526L308.929 66.5426C306.427 66.0533 309.792 57.4363 304.824 52.038Z" transform="scale(2.92969)"/>
+                                                                <path fill="#fff" d="M301.788 83.4337L310.289 85.9563C317.875 88.9536 325.166 94.0522 328.64 101.625C330.124 104.861 329.447 108.789 329.454 112.244L329.607 130.951C329.683 132.864 330.01 134.729 330.131 136.625L332.771 196.549C332.835 230.78 309.214 264.271 275.868 273.653C256.588 279.078 237.198 275.816 219.872 266.057L212.438 261.077C193.667 246.825 178.831 225.788 178.631 201.602L180.836 161.5L182.728 127.618C182.746 121.513 183.287 115.012 182.475 108.97L182.654 108.737C189.315 100.866 204.301 102.921 213.362 102.913L244.379 102.885C271.511 102.86 283.524 104.18 301.788 83.4337Z" transform="scale(2.92969)"/>
+                                                                <path d="M222.05 140.676L228.986 140.516C240.392 140.362 239.753 152.727 233.895 156.214L233.625 156.371C231.171 157.923 225.545 157.249 222.565 157.257L208.351 157.283C203.928 157.299 199.198 157.775 195.57 154.708 190.02 150.016 193.463 142.454 200.034 140.842 202.077 140.341 204.818 140.658 206.923 140.654L222.05 140.676zM277.445 140.779C284.144 140.378 291.018 140.685 297.734 140.688L305.179 140.692C319.55 140.714 318.827 154.744 309.408 157.199 304.169 157.7 298.579 157.324 293.308 157.313L282.231 157.28C280.185 157.272 277.432 157.591 275.55 156.722L275.243 156.572C268.298 153.294 268.806 143.549 276.348 141.109L277.445 140.779zM280.766 215.558C285.461 214.869 290.679 218.647 291.457 223.375 293.118 233.48 269.023 243.665 261.136 244.66 247.969 246.322 235.758 243.461 225.157 235.258 208.964 221.894 223.968 209.507 233.629 219.035 235.308 220.691 236.64 222.719 238.496 224.192 247.816 231.595 264.266 229.209 273.2 222.136 275.745 220.122 277.587 217.301 280.458 215.722L280.766 215.558z" transform="scale(2.92969)"/>
+                                                                <path fill="#9FC79A" d="M232.652 370.154C270.451 384.266 310.024 363.106 316.7 323.204C318.703 324.102 320.854 324.488 322.981 324.965L391.612 339.822C401.621 341.935 418.65 343.641 427.414 348.895C431.27 350.616 435.228 353.179 438.469 355.902C451.767 365.101 460.05 381.747 462.899 397.297L463.785 402.223C464.614 405.583 464.29 409.833 464.294 413.284L464.325 492.874L409.589 492.877L409.783 420.061C409.77 412.05 411.71 411.06 403.534 410.67C401.976 399.094 386.971 401.079 386.401 410.468C386.221 413.428 386.436 416.496 386.453 419.468L386.499 492.863L124.54 492.943C123.961 486.009 124.256 479.065 124.256 472.257L124.173 422.416C124.093 418.948 124.109 415.416 123.067 412.081C121.18 411.742 119.387 411.668 117.48 411.707C117.291 398.317 101.983 400.775 100.783 410.473C100.448 413.179 100.714 416.241 100.718 418.978L100.739 492.867L54.7876 492.943L54.2139 420.209C54.2247 415.183 54.1159 410.124 54.7197 405.125C57.552 381.677 73.0944 360.832 95.2179 352.424C102.668 349.593 110.715 348.31 118.516 346.83L177 334.506C183.651 333.122 190.432 331.332 197.25 331.234L197.618 330.84C202.222 342.463 207.762 352.539 217.578 360.782C219.868 362.705 222.4 364.235 224.729 366.082C227.282 367.613 229.872 369.067 232.652 370.154ZM232.652 370.154C229.872 369.067 227.282 367.613 224.729 366.082L224.44 366.875C225.651 369.32 229.429 371.247 231.731 372.612C238.46 375.955 244.895 378.82 252.358 380.14C286.207 386.127 315.384 363.467 321.08 330.037C325.382 330.492 329.631 331.66 333.852 332.571L405.609 347.23L424.284 351.895L437.75 356.64C438.168 356.39 438.2 356.351 438.469 355.902C435.228 353.179 431.27 350.616 427.414 348.895C418.65 343.641 401.621 341.935 391.612 339.822L322.981 324.965C320.854 324.488 318.703 324.102 316.7 323.204C310.024 363.106 270.451 384.266 232.652 370.154Z" transform="scale(2.92969)"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2 mb-1">युवा</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="title-box text-center pb-0 wow fadeInDown my-0">
+                                                <h5 class="heading7  fw-bold text-color2 mb-xxl-3 mb-2">लाभ</h5>
+                                            </div>
+                                        </div>
+                                        <div class="row align-content-lg-center justify-content-lg-center">
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeBenifits&pointvalue=5" class=" wow slideInRight shadow plan-box p-2 text-center rounded-2 counter1 pcolor9 text-decoration-none d-block mb-4">
+                                                    <div class="plan-conten pt-2">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 90 90" viewBox="0 0 90 90" id="loan-application">
+                                                                <path fill="#c9eaf9" d="M62.406,14.286c-3.826,1.106-7.475,2.768-11.304,3.865c-7.499,2.15-15.43,2.074-23.164,3.094   c-7.734,1.02-15.775,3.427-20.919,9.292c-6.684,7.621-6.615,19.678-1.495,28.428s14.385,14.45,24.094,17.363   c8.026,2.408,16.637,3.127,24.841,1.421c8.204-1.706,15.971-5.923,21.39-12.315c3.786-4.467,6.344-9.84,8.463-15.299   c2.704-6.966,4.784-14.507,3.439-21.857C85.421,15.545,74.016,10.929,62.406,14.286z"/>
+                                                                <path fill="#fff" d="M64.621,19.612v55.24c0,1.12-0.9,2.02-2.02,2.02h-41.8c-1.12,0-2.02-0.9-2.02-2.02v-55.24     c0-1.11,0.9-2.02,2.02-2.02h41.8C63.721,17.592,64.621,18.502,64.621,19.612z"/>
+                                                                <path fill="#e6e6ef" d="M64.621 46.202v24.18l-3.26 2.03c-.52.32-1.12.49-1.74.49-.89 0-1.75-.37-2.37-1.01-.61-.64-.94-1.52-.9-2.41l.25-6.75c.01-.15.02-.3.04-.45l.31-2.13c.08-.53.26-1.04.52-1.51L64.621 46.202zM53.341 17.174v4.575c0 .784-.636 1.42-1.42 1.42H31.48c-.784 0-1.42-.636-1.42-1.42v-4.575c0-.784.636-1.42 1.42-1.42h20.441C52.705 15.755 53.341 16.39 53.341 17.174zM64.621 19.612v16.28c-4.74-2.28-8.02-7.13-8.02-12.72 0-1.98.41-3.87 1.15-5.58h4.85C63.721 17.592 64.621 18.502 64.621 19.612z"/>
+                                                                <path fill="#ff564c" d="M53.341,15.309v4.575c0,0.784-0.636,1.42-1.42,1.42H31.48c-0.784,0-1.42-0.636-1.42-1.42v-4.575     c0-0.784,0.636-1.42,1.42-1.42h20.441C52.705,13.889,53.341,14.524,53.341,15.309z"/>
+                                                                <path fill="#febc00" d="M57.881,30.144v4.699c0,0.332-0.269,0.601-0.601,0.601H26.12c-0.332,0-0.601-0.269-0.601-0.601v-4.699     c0-0.332,0.269-0.601,0.601-0.601h31.16C57.612,29.542,57.881,29.812,57.881,30.144z"/>
+                                                                <path fill="#5c9efe" d="M57.881,43.519v4.699c0,0.332-0.269,0.601-0.601,0.601H26.12c-0.332,0-0.601-0.269-0.601-0.601v-4.699    c0-0.332,0.269-0.601,0.601-0.601h31.16C57.612,42.918,57.881,43.187,57.881,43.519z"/>
+                                                                <ellipse cx="70.709" cy="23.17" fill="#febc00" rx="11.104" ry="11.103" transform="rotate(-45.001 70.709 23.17)"/>
+                                                                <circle cx="70.709" cy="23.17" r="7.796" fill="#fff" transform="rotate(-45.001 70.709 23.17)"/>
+                                                                <path fill="#fff" d="M59.857,60.545c-0.116,0.216-0.186,0.453-0.195,0.699l-0.312,8.376c-0.008,0.222,0.235,0.363,0.423,0.245      l7.113-4.433c0.208-0.13,0.38-0.309,0.509-0.517L59.857,60.545z"/>
+                                                                <path fill="#5c9efe" d="M59.676,60.844l8.871-15.466c0.309-0.534,0.993-0.715,1.526-0.406l5.617,3.256      c0.534,0.309,0.715,0.993,0.406,1.526L67.225,65.22L59.676,60.844z"/>
+                                                                <rect width="3.018" height="8.725" x="70.616" y="43.543" fill="#fff" transform="rotate(-59.899 72.127 47.908)"/>
+                                                                <path fill="#ff564c" d="M76.654,48.79l1.002-1.869c1.208-2.084,0.498-4.753-1.586-5.962l0,0c-2.084-1.208-4.753-0.498-5.962,1.586      l-1.002,1.869L76.654,48.79z"/>
+                                                                <path fill="#525987" d="M65.372,33.739c1.606,0.815,3.416,1.284,5.337,1.284c6.536,0,11.854-5.318,11.854-11.854       c0-6.535-5.317-11.853-11.854-11.853c-4.208,0-7.902,2.211-10.006,5.525h-6.612v-1.533c0-1.196-0.974-2.17-2.17-2.17H31.48       c-1.196,0-2.17,0.974-2.17,2.17v1.533h-8.508c-1.527,0-2.77,1.243-2.77,2.771v55.24c0,1.527,1.243,2.77,2.77,2.77h41.8       c1.527,0,2.77-1.242,2.77-2.77v-7.594l1.91-1.19c0.327-0.203,0.601-0.486,0.793-0.821c20.121-35.074-0.153,0.269,10.229-17.951       c1.414-2.436,0.592-5.566-1.858-6.985c-2.405-1.395-5.543-0.633-6.999,1.88c-0.057,0.101-4.133,7.325-4.076,7.225V33.739z        M70.709,12.817c5.709,0,10.354,4.645,10.354,10.353c0,5.71-4.645,10.354-10.354,10.354s-10.354-4.645-10.354-10.354       C60.356,17.461,65,12.817,70.709,12.817z M30.81,15.309c0-0.369,0.3-0.67,0.67-0.67h20.441c0.37,0,0.67,0.301,0.67,0.67v4.575       c0,0.369-0.3,0.67-0.67,0.67H31.48c-0.37,0-0.67-0.301-0.67-0.67V15.309z M63.872,74.853c0,0.7-0.57,1.27-1.27,1.27h-41.8       c-0.7,0-1.27-0.569-1.27-1.27v-55.24c0-0.7,0.57-1.271,1.27-1.271h8.508v1.542c0,1.196,0.974,2.17,2.17,2.17h20.441       c1.196,0,2.17-0.974,2.17-2.17v-1.542h5.803c-0.662,1.476-1.038,3.107-1.038,4.827c0,3.989,1.987,7.517,5.016,9.667v19.194       l-4.644,8.093c-0.192,0.332-0.302,0.71-0.316,1.093L58.6,69.591c-0.014,0.382,0.182,0.737,0.512,0.928       c0.16,0.093,0.337,0.139,0.514,0.139c0.188,0,0.377-0.053,0.542-0.156l3.703-2.308V74.853z M69.382,45.44l6.248,3.621       l-0.761,1.313l-6.242-3.618L69.382,45.44z M75.694,41.608c1.703,0.989,2.333,3.177,1.301,4.958l-0.635,1.185l-6.249-3.623       l0.647-1.207C71.747,41.213,73.945,40.595,75.694,41.608z M67.88,48.056l6.251,3.624l-7.356,12.819       c-0.069,0.12-0.168,0.223-0.287,0.296l-4.512,2.812l-1.764-1.022l0.198-5.313c0.005-0.14,0.045-0.276,0.116-0.4l4.706-8.2       c0.047-0.049,0.091-0.109,0.139-0.155v-0.088L67.88,48.056z"/>
+                                                                <path fill="#525987" d="M26.12 36.194h31.16c.745 0 1.351-.606 1.351-1.352v-4.698c0-.745-.606-1.352-1.351-1.352H26.12c-.745 0-1.351.606-1.351 1.352v4.698C24.769 35.587 25.375 36.194 26.12 36.194zM26.269 30.292h30.862v4.401H26.269V30.292zM26.12 49.569h31.16c.745 0 1.351-.605 1.351-1.351v-4.699c0-.745-.606-1.351-1.351-1.351H26.12c-.745 0-1.351.605-1.351 1.351v4.699C24.769 48.963 25.375 49.569 26.12 49.569zM26.269 43.668h30.862v4.4H26.269V43.668zM25.519 25.947h5.994c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-5.994c-.414 0-.75.336-.75.75S25.105 25.947 25.519 25.947zM25.519 40.181h7.501c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.501c-.414 0-.75.336-.75.75S25.105 40.181 25.519 40.181zM25.519 55.889h2.245c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-2.245c-.414 0-.75.336-.75.75S25.105 55.889 25.519 55.889zM57.881 54.389h-24.69c-.414 0-.75.336-.75.75s.336.75.75.75h24.69c.414 0 .75-.336.75-.75S58.295 54.389 57.881 54.389zM25.519 60.305h28.965c.414 0 .75-.336.75-.75s-.336-.75-.75-.75H25.519c-.414 0-.75.336-.75.75S25.105 60.305 25.519 60.305zM44.572 63.221H25.519c-.414 0-.75.336-.75.75 0 .414.336.75.75.75h19.053c.414 0 .75-.336.75-.75C45.322 63.557 44.986 63.221 44.572 63.221zM56.185 68.755h-6.751c-.414 0-.75.336-.75.75s.336.75.75.75h6.751c.414 0 .75-.336.75-.75S56.599 68.755 56.185 68.755zM70.709 26.036c-.583 0-1.059-.475-1.059-1.059 0-.414-.336-.75-.75-.75s-.75.336-.75.75c0 1.148.765 2.111 1.809 2.433v.459c0 .414.336.75.75.75s.75-.336.75-.75v-.459c1.043-.323 1.808-1.285 1.808-2.433 0-1.41-1.147-2.558-2.558-2.558-.583 0-1.059-.475-1.059-1.059s.475-1.059 1.059-1.059 1.058.475 1.058 1.059c0 .414.336.75.75.75s.75-.336.75-.75c0-1.148-.765-2.111-1.808-2.433v-.459c0-.414-.336-.75-.75-.75s-.75.336-.75.75v.459c-1.043.323-1.809 1.285-1.809 2.433 0 1.411 1.148 2.559 2.559 2.559.583 0 1.058.475 1.058 1.058C71.767 25.562 71.293 26.036 70.709 26.036z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2">वित्तीय सहायता /भत्ता </h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeBenifits&pointvalue=13" class="counter2  wow slideInRight shadow plan-box p-2 text-center rounded-2 pcolor8 text-decoration-none d-block mb-4">
+                                                    <div class="plan-conten pt-2">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 64 64" id="financial-support">
+                                                                <path fill="#ff9f1c" d="M34.26 16.59A9 9 0 1 0 42 3a8.884 8.884 0 0 0-4.11 1 8.506 8.506 0 0 0-2.25 1.64c-.1.1-.2.2-.3.31s-.19.22-.28.33-.18.22-.27.34a3.282 3.282 0 0 0-.27.38 9.017 9.017 0 0 0-1.43 3.71Z"/>
+                                                                <circle cx="34" cy="32" r="9" fill="#ff9f1c"/>
+                                                                <path fill="#41ead4" d="M18.914 52.9c-5.728-1.059-6.751-2.082-7.81-7.81a.106.106 0 0 0-.208 0c-1.059 5.728-2.082 6.751-7.81 7.81a.106.106 0 0 0 0 .208c5.728 1.059 6.751 2.082 7.81 7.809a.106.106 0 0 0 .208 0c1.059-5.727 2.082-6.75 7.81-7.809a.106.106 0 0 0 0-.208Z"/>
+                                                                <path fill="#011627" d="M15 22H3V6h12v16z"/>
+                                                                <path fill="#c5c3c6" d="M37.25 11.07a2.9 2.9 0 0 1 .56 1.72 2.829 2.829 0 0 1-1.31 2.42l-2.24 1.38L25.49 22 15 21V8h9.33l4.15-4h9.41a8.857 8.857 0 0 0-3.37 3h-1.89l-6.22 5v2l6.68-3.29 1-.49a2.629 2.629 0 0 1 3.16.85Z"/>
+                                                                <path fill="#011627" d="m55.427 47.821-8.799 8.069L52.201 61 61 52.931l-5.573-5.11z"/>
+                                                                <path fill="#c5c3c6" d="M52.6 46.577a10.382 10.382 0 0 0-8.391-2.526l-3.249-.978a1.736 1.736 0 0 0-1.657.367 1.407 1.407 0 0 0 .232 2.282l2.552 1.553 4.2 1.263A17.99 17.99 0 0 1 32.1 46.282l-1.921-1.253a2.143 2.143 0 0 0-2.58.209 1.736 1.736 0 0 0 .17 2.746l3.594 2.556a24.928 24.928 0 0 0 16.29 4.415l7.046-6.461Z"/>
+                                                                <path d="M2.905 54.087c5.306.981 6.027 1.7 7.008 7.01a1.106 1.106 0 0 0 2.174 0c.981-5.307 1.7-6.028 7.008-7.009a1.105 1.105 0 0 0 0-2.174c-5.306-.981-6.027-1.7-7.008-7.01a1.106 1.106 0 0 0-2.174 0c-.981 5.307-1.7 6.028-7.008 7.009a1.105 1.105 0 0 0 0 2.174zM11 48.808A6.15 6.15 0 0 0 15.192 53 6.15 6.15 0 0 0 11 57.192 6.15 6.15 0 0 0 6.808 53 6.15 6.15 0 0 0 11 48.808zM3 23h12a.989.989 0 0 0 .98-.9l9.42.9h.094a1 1 0 0 0 .526-.149l7.96-4.909A9.994 9.994 0 1 0 42 2a9.921 9.921 0 0 0-4.32 1h-9.2a1.006 1.006 0 0 0-.694.28L23.927 7H16V6a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1zM35.893 6.842c.044-.053.089-.1.135-.158.132-.149.277-.287.421-.426A7.436 7.436 0 0 1 37.1 5.7c.1-.074.188-.154.287-.224a7.381 7.381 0 0 1 .969-.589A8 8 0 1 1 42 20a8.028 8.028 0 0 1-6.323-3.107l1.352-.834a3.815 3.815 0 0 0 1.781-3.269 3.888 3.888 0 0 0-.752-2.31l-.011-.014a3.627 3.627 0 0 0-3.484-1.4 8.15 8.15 0 0 1 .8-1.52 7.9 7.9 0 0 1 .53-.704zM16 9h8.33a1 1 0 0 0 .694-.28L28.884 5h5.973c-.028.029-.051.063-.079.092-.059.061-.118.12-.179.186a11.924 11.924 0 0 0-.554.673c-.019.025-.043.046-.062.072a6.394 6.394 0 0 0-3.453 1.382l-3.188 2.563A5.148 5.148 0 0 0 25.41 14a1 1 0 0 0 1.442.9l7.641-3.762a1.633 1.633 0 0 1 1.954.532 1.894 1.894 0 0 1 .363 1.123 1.824 1.824 0 0 1-.834 1.568l-10.725 6.612L16 20.091zm16.657-.566a10.075 10.075 0 0 0-.448 1.6l-4.147 2.041a3.168 3.168 0 0 1 .534-.546l3.188-2.563a4.371 4.371 0 0 1 .873-.532zM4 7h10v14H4zm31 20.124V26h-2v1.124a2.774 2.774 0 0 0-2 2.654v.444A2.781 2.781 0 0 0 33.777 33h.446a.779.779 0 0 1 .777.778v.444a.779.779 0 0 1-.777.778h-.446a.779.779 0 0 1-.777-.778h-2a2.774 2.774 0 0 0 2 2.654V38h2v-1.124a2.774 2.774 0 0 0 2-2.654v-.444A2.781 2.781 0 0 0 34.223 31h-.446a.779.779 0 0 1-.777-.778v-.444a.779.779 0 0 1 .777-.778h.446a.779.779 0 0 1 .777.778V30h2v-.222a2.774 2.774 0 0 0-2-2.654z"/>
+                                                                <path d="M34 22a10 10 0 1 0 10 10 10.011 10.011 0 0 0-10-10zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8zm8.223-25h-.446a.779.779 0 0 1-.777-.778h-2a2.774 2.774 0 0 0 2 2.654V18h2v-1.124a2.774 2.774 0 0 0 2-2.654v-.444A2.781 2.781 0 0 0 42.223 11h-.446a.779.779 0 0 1-.777-.778v-.444A.779.779 0 0 1 41.777 9h.446a.779.779 0 0 1 .777.778V10h2v-.222a2.774 2.774 0 0 0-2-2.654V6h-2v1.124a2.774 2.774 0 0 0-2 2.654v.444A2.781 2.781 0 0 0 41.777 13h.446a.779.779 0 0 1 .777.778v.444a.779.779 0 0 1-.777.778z"/>
+                                                                <path d="M56.1 47.084a1 1 0 0 0-1.352 0l-.058.053-1.414-1.3a11.417 11.417 0 0 0-8.976-2.804l-3.046-.917a2.724 2.724 0 0 0-2.621.588 2.4 2.4 0 0 0 .389 3.872l2.518 1.532a16.619 16.619 0 0 1-8.9-2.664l-1.92-1.253a3.15 3.15 0 0 0-3.8.31 2.734 2.734 0 0 0 .266 4.3l3.594 2.556a25.733 25.733 0 0 0 14.878 4.673.979.979 0 0 0 .3.6l5.573 5.111a1 1 0 0 0 1.352 0l8.8-8.069a1 1 0 0 0 0-1.474Zm-24.162 2.641-3.595-2.556a.737.737 0 0 1-.072-1.194 1.136 1.136 0 0 1 1.357-.109l1.92 1.253a18.929 18.929 0 0 0 14.986 2.388 1 1 0 0 0 .041-1.927L42.5 46.354l-2.443-1.487a.444.444 0 0 1-.231-.332.42.42 0 0 1 .154-.358.745.745 0 0 1 .694-.146l3.249.978a.976.976 0 0 0 .423.033 9.426 9.426 0 0 1 7.581 2.272l1.286 1.179-5.983 5.488a23.836 23.836 0 0 1-15.292-4.256ZM52.2 59.643l-4.093-3.753.215-.2 3.342-3.064 3.762-3.449 4.093 3.753Z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2">छात्रवृत्ति</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+                                                <a href="KnowYourEntitleGrid.aspx?status=BySchemeBenifits&pointvalue=1" class="counter2  wow slideInRight shadow plan-box p-2 text-center rounded-2 counter3 pcolor10 text-decoration-none d-block mb-4">
+                                                    <div class="plan-conten pt-2">
+                                                        <div class="">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 512 512" id="rupee">
+                                                                <path fill="#fed947" d="M378.48,259.54A126,126,0,0,1,289.37,44.41,126,126,0,0,1,467.59,222.63,125.2,125.2,0,0,1,378.48,259.54Z"/>
+                                                                <path fill="#fed947" d="M378.48,15a118.51,118.51,0,0,0-83.8,202.32A118.52,118.52,0,0,0,462.29,49.71,117.78,117.78,0,0,0,378.48,15Z"/>
+                                                                <path fill="#fecc30" d="M467.59,44.41A125.2,125.2,0,0,0,378.48,7.5a128.66,128.66,0,0,0-15,.88,126,126,0,0,1,74.11,214.25,125.13,125.13,0,0,1-74.11,36,128.66,128.66,0,0,0,15,.89A126,126,0,0,0,467.59,44.41Z"/>
+                                                                <path fill="#fdd8ae" d="M115.65,453.65l55.43-12.87a39.17,39.17,0,0,1,17.27-.1l133.87,29.51a57.06,57.06,0,0,0,45.56-9.36l126.81-91a23.75,23.75,0,0,0,9.87-20.68h0a23.73,23.73,0,0,0-30.61-21.34l-177,53.87-157.5-51.27Z"/>
+                                                                <path fill="#fbbf7d" d="M158.35,440.68a39.17,39.17,0,0,0-17.27.1l-24,5.58-1.4,7.29,49.44-11.48Z"/>
+                                                                <path fill="#fdd8ae" d="M104.64,325.93l78.8-23.72a110.65,110.65,0,0,1,75.94,4.47l75.14,32.66a25,25,0,0,1,14.31,29h0a25,25,0,0,1-29.78,18.35l-42.68-9.63Z"/>
+                                                                <path fill="#fbbf7d" d="M319.05,371.73l-42.68-9.63h0A18.76,18.76,0,0,0,291,380.4l33.37,7.53c13.45,3,24.45-5.76,24.45-19.55h0a24.92,24.92,0,0,0-.41-13.56A25,25,0,0,1,319.05,371.73Z"/>
+                                                                <path fill="#2370b5" d="M151.11,479.6,91,490,0,505.8V309.56l58.16-8.79,60.16-10.43A17,17,0,0,1,138,304.23l27,155.66A17,17,0,0,1,151.11,479.6Z"/>
+                                                                <path fill="#0a56a4" d="M163.24,449.81a17,17,0,0,1-12.13,8.82L91,469.06,0,484.83v21L91,490l60.16-10.43A17,17,0,0,0,165,459.89Z"/>
+                                                                <path fill="#0a56a4" d="M151.11,479.6,91,490,58.16,300.77l60.16-10.43A17,17,0,0,1,138,304.23l27,155.66A17,17,0,0,1,151.11,479.6Z"/>
+                                                                <path fill="#144e92" d="M165,459.89,138,304.23a17,17,0,0,0-19.7-13.89l-9.81,1.7L135,444.89a17,17,0,0,1-13.88,19.71l-33.56,5.82L91,490l60.16-10.43A17,17,0,0,0,165,459.89Z"/>
+                                                                <path fill="#3c3b41" d="M365.42,130.89H335a3.55,3.55,0,0,0-.46,0h-.29l-.41.07-.32.05c-.12,0-.24.06-.36.09l-.35.09-.36.13-.32.12c-.15.06-.29.14-.44.21l-.21.11-.37.22-.26.16-.28.21-.31.23-.22.21-.33.3s0,0,0,0l-.17.19-.28.33c-.08.09-.14.18-.21.27l-.22.32c-.07.1-.13.21-.19.31a2.58,2.58,0,0,0-.18.32c-.06.11-.11.22-.16.33a2.07,2.07,0,0,0-.15.34,3.42,3.42,0,0,0-.13.34,3.58,3.58,0,0,0-.11.35,2.25,2.25,0,0,0-.09.35l-.09.36c0,.13,0,.25-.05.37s0,.24-.05.36,0,.28,0,.42,0,.17,0,.26v.06c0,.14,0,.29,0,.43s0,.21,0,.32l.06.36c0,.12,0,.25.06.37a2.68,2.68,0,0,0,.07.27c0,.14.07.29.11.44a1.8,1.8,0,0,0,.08.21c0,.16.11.31.17.47l.16.33a3.18,3.18,0,0,0,.16.32c.06.11.13.22.2.33a2.82,2.82,0,0,0,.18.29,2.69,2.69,0,0,0,.2.27l.24.33.2.21c.1.12.2.23.31.34l0,0,65.67,63.54a7.5,7.5,0,0,0,10.43-10.78l-52.35-50.65h11.83A44.28,44.28,0,0,0,409,109.18H421.9a7.5,7.5,0,0,0,0-15H409a44,44,0,0,0-10.42-21.71H421.9a7.5,7.5,0,0,0,0-15H335.06a7.5,7.5,0,0,0,0,15h30.36a29.26,29.26,0,0,1,28.23,21.71H335.06a7.5,7.5,0,0,0,0,15h58.59A29.27,29.27,0,0,1,365.42,130.89Zm146.52,217.8a31.22,31.22,0,0,0-40.28-28.09L356.4,355.68a32.64,32.64,0,0,0-18.89-23.29l-75.15-32.66A118.28,118.28,0,0,0,181.28,295l-35.4,10.65-.47-2.73a24.55,24.55,0,0,0-28.38-20L56.89,293.31h0L6.22,302.1a7.5,7.5,0,1,0,2.56,14.78l43.27-7.51L82.28,483.85,6.22,497a7.5,7.5,0,0,0,1.27,14.89,8.22,8.22,0,0,0,1.29-.11l143.61-24.9a24.57,24.57,0,0,0,20-28.38l-1.73-10,2.14-.5a32,32,0,0,1,13.95-.08L320.6,477.44a64.65,64.65,0,0,0,51.55-10.59l126.8-91A31.07,31.07,0,0,0,511.94,348.69ZM149.82,472.14l-52.76,9.15L66.83,306.81l52.77-9.15a9.54,9.54,0,0,1,11,7.78l27,155.66A9.55,9.55,0,0,1,149.82,472.14ZM490.21,363.71l-126.81,91a49.67,49.67,0,0,1-39.57,8.13L190,433.28a47,47,0,0,0-20.57.12l-1.31.31L148.46,320.5l37.14-11.18a103.27,103.27,0,0,1,70.79,4.17l75.14,32.66a17.55,17.55,0,0,1,10.37,18.51,17.31,17.31,0,0,1-.35,1.83,17.46,17.46,0,0,1-20.85,12.85L278,369.71a7.5,7.5,0,0,0-3.3,14.64L317.39,394a32.13,32.13,0,0,0,7.18.81,32.46,32.46,0,0,0,31.13-23.21L476,335a16.5,16.5,0,0,1,4.77-.71,16.26,16.26,0,0,1,9.41,29.47ZM378.48,267A133.52,133.52,0,0,0,472.89,39,133.52,133.52,0,1,0,284.07,227.86,132.63,132.63,0,0,0,378.48,267ZM294.67,49.64A118.52,118.52,0,1,1,462.28,217.25,118.52,118.52,0,0,1,294.67,49.64Z"/>
+                                                            </svg>
+                                                        </div>
+                                                        <h3 class="h-auto pt-2">ऋण</h3>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <!-- Modal Popup -->
+            <footer class="footer-sec py-xxl-4 py-xl-3 pt-md-2 pb-md-4 position-relative  wow fadeInDown">
+                <div class="footer_overlay"></div>
+                <div class="container pt-4 pb-xxl-1 pb-lg-2  mb-md-2 mb-lg-1 mb-xxl-3 mt-xxl-2">
+                    <div class="row">
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-3 col-xxl-3">
+                            <div class="footer-box text-white">
+                                <h4 class="heading6 mb-1 text-white">
+                                    <span>उपयोगी लिंक्स</span>
+                                </h4>
+                                <div class="border-line position-relative">
+                                    <div class="position-absolute">
+                                        <span class=""></span>
+                                        <span class=""></span>
+                                        <span class=""></span>
+                                    </div>
+                                </div>
+                                <ul class="mb-0 p-0 mt-sm-4 mt-3">
+                                    <li class="d-block pb-2">
+                                        <a href="SchemeDashboard.html" class="text-decoration-none text-white">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="right-arrow">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrowhead-right">
+                                                        <rect width="24" height="24" opacity="0" transform="rotate(-90 12 12)"/>
+                                                        <path d="M18.78 11.37l-4.78-6a1 1 0 0 0-1.41-.15 1 1 0 0 0-.15 1.41L16.71 12l-4.48 5.37a1 1 0 0 0 .13 1.41A1 1 0 0 0 13 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 .01-1.27z"/>
+                                                        <path d="M7 5.37a1 1 0 0 0-1.61 1.26L9.71 12l-4.48 5.36a1 1 0 0 0 .13 1.41A1 1 0 0 0 6 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 0-1.27z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            योजनाएं
+                          
+                                        </a>
+                                    </li>
+                                    <li class="d-block pb-2">
+                                        <a href="grievance-status.aspx" class="text-decoration-none text-white">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="right-arrow">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrowhead-right">
+                                                        <rect width="24" height="24" opacity="0" transform="rotate(-90 12 12)"/>
+                                                        <path d="M18.78 11.37l-4.78-6a1 1 0 0 0-1.41-.15 1 1 0 0 0-.15 1.41L16.71 12l-4.48 5.37a1 1 0 0 0 .13 1.41A1 1 0 0 0 13 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 .01-1.27z"/>
+                                                        <path d="M7 5.37a1 1 0 0 0-1.61 1.26L9.71 12l-4.48 5.36a1 1 0 0 0 .13 1.41A1 1 0 0 0 6 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 0-1.27z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            शिकायत की स्थिति
+                          
+                                        </a>
+                                    </li>
+                                    <li class="d-block pb-2">
+                                        <a href="FAQ-hindi.aspx" class="text-decoration-none text-white">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="right-arrow">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrowhead-right">
+                                                        <rect width="24" height="24" opacity="0" transform="rotate(-90 12 12)"/>
+                                                        <path d="M18.78 11.37l-4.78-6a1 1 0 0 0-1.41-.15 1 1 0 0 0-.15 1.41L16.71 12l-4.48 5.37a1 1 0 0 0 .13 1.41A1 1 0 0 0 13 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 .01-1.27z"/>
+                                                        <path d="M7 5.37a1 1 0 0 0-1.61 1.26L9.71 12l-4.48 5.36a1 1 0 0 0 .13 1.41A1 1 0 0 0 6 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 0-1.27z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            सामान्य प्रश्न
+                          
+                                        </a>
+                                    </li>
+                                    <li class="d-block pb-2">
+                                        <a href="MIS/index.html" class="text-decoration-none text-white">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="right-arrow">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrowhead-right">
+                                                        <rect width="24" height="24" opacity="0" transform="rotate(-90 12 12)"/>
+                                                        <path d="M18.78 11.37l-4.78-6a1 1 0 0 0-1.41-.15 1 1 0 0 0-.15 1.41L16.71 12l-4.48 5.37a1 1 0 0 0 .13 1.41A1 1 0 0 0 13 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 .01-1.27z"/>
+                                                        <path d="M7 5.37a1 1 0 0 0-1.61 1.26L9.71 12l-4.48 5.36a1 1 0 0 0 .13 1.41A1 1 0 0 0 6 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 0-1.27z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            अधिकारी लॉगिन
+                          
+                                        </a>
+                                    </li>
+                                    <li class="d-block pb-2">
+                                        <a href="sitemap.aspx" class="text-decoration-none text-white">
+                                            <svg fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="right-arrow">
+                                                <g data-name="Layer 2">
+                                                    <g data-name="arrowhead-right">
+                                                        <rect width="24" height="24" opacity="0" transform="rotate(-90 12 12)"/>
+                                                        <path d="M18.78 11.37l-4.78-6a1 1 0 0 0-1.41-.15 1 1 0 0 0-.15 1.41L16.71 12l-4.48 5.37a1 1 0 0 0 .13 1.41A1 1 0 0 0 13 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 .01-1.27z"/>
+                                                        <path d="M7 5.37a1 1 0 0 0-1.61 1.26L9.71 12l-4.48 5.36a1 1 0 0 0 .13 1.41A1 1 0 0 0 6 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 0-1.27z"/>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            साइटमैप
+                          
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-md-5 col-lg-6 col-xl-4 col-xxl-4">
+                            <div class="footer-box text-whit7e mt-sm-0">
+                                <h4 class="heading6 mb-1 text-white">
+                                    <span>विभाग के अन्य पोर्टल</span>
+                                </h4>
+                                <div class="border-line position-relative">
+                                    <div class="position-absolute">
+                                        <span class=""></span>
+                                        <span class=""></span>
+                                        <span class=""></span>
+                                    </div>
+                                </div>
+                                <ul class="mb-0 p-0 mt-4">
+                                    <li class="d-inline-block border border-2 m-1 rounded-2">
+                                        <a href="https://cmdashboard.mp.gov.in/" target="CMHL" class="text-decoration-none">
+                                            <figure>
+                                                <img src="UINew/img/final-cm-dashq.png" class="img-fluid rounded-1 cm-dash" alt="final-cm-dash"/>
+                                            </figure>
+                                        </a>
+                                    </li>
+                                    <li class="d-inline-block border border-2 m-1 rounded-2">
+                                        <a href="https://mp.mygov.in/" target="CMHL" class="text-decoration-none">
+                                            <figure>
+                                                <img src="UINew/img/mp-mygov-logo-deepak.png" class="img-fluid rounded-1 mp-gov" alt="mp-mygov-logo"/>
+                                            </figure>
+                                        </a>
+                                    </li>
+                                    <li class="d-inline-block border border-2 m-1 rounded-2">
+                                        <a href="https://www.mpedistrict.gov.in/MPL/Home.aspx" target="CMHL" class="text-decoration-none">
+                                            <figure>
+                                                <img src="UINew/img/final-mpe-two.png" class="img-fluid rounded-1 mpe-two" alt="final-mpe"/>
+                                            </figure>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-5 col-xxl-5">
+                            <div class="footer-box text-white mt-lg-0">
+                                <p>
+                                    <span>
+                                        <span id="ctl00_lblLastDate" class="">.</span>
+                                    </span>
+                                </p>
+                                <div class="row">
+                                    <div class="col-6 col-sm-6">
+                                        <a href="http://www.digitalindia.gov.in/" target="digitalindia" class="text-decoration-none">
+                                            <figure>
+                                                <img src="UINew/img/digital-india-2.png" class="img-fluid" alt="digital-india-2"/>
+                                            </figure>
+                                        </a>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <a href="http://www.lokseva.gov.in/MPL/Home.aspx" target="lokseva" class="text-decoration-none">
+                                            <figure>
+                                                <img src="UINew/img/mpsaps-logo.png" class="img-fluid " alt="mpsaps"/>
+                                            </figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <div class="bg-color1 sub_footer  py-2">
+                <p class="text-center mb-0 text-white">&nbsp;© 2024 CMHELPLINE MADHYA PRADESH | All rights Reserved. </p>
+            </div>
+            <div class="whatsapp-icons-start floating">
+                <a href="https://web.whatsapp.com/send?phone=917552555582&text=Hi" target="_blank">
+                    <img src="UINew/img/cm-chatbot-two.png" class="img-fluid" alt="whatsapp-image"/>
+                </a>
+            </div>
+        </form>
+        <!-- website return top -->
+        <a id="back2Top" title="Back to top" href="#">
+            <i class="fa fa-arrow-up text-white" aria-hidden="true"></i>
+        </a>
+        <!-- website return top -->
+        <script type="text/javascript" src="UINew/css/BootStrap5/bootstrap.min.js"></script>
+        <script type="text/javascript" src="UINew/js/jquery.min.js"></script>
+        <script type="text/javascript" src="UINew/js/custom.js"></script>
+        <script type="text/javascript" src="UINew/js/wow.min.js"></script>
+        <script type="text/javascript">
+            new WOW().init();
+        </script>
+    </body>
+</html>
